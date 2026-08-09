@@ -17,20 +17,7 @@ import pandas as pd
 import config
 import market_data
 import signals
-from db import connect, init_db
-
-
-def _get_universe(limit: int | None) -> list[str]:
-    with connect() as conn:
-        rows = conn.execute("SELECT ticker FROM tickers ORDER BY ticker").fetchall()
-    tickers = [r["ticker"] for r in rows]
-    return tickers[:limit] if limit else tickers
-
-
-def _already_tracked() -> set[str]:
-    with connect() as conn:
-        rows = conn.execute("SELECT ticker FROM watchlist WHERE status = 'watching'").fetchall()
-    return {r["ticker"] for r in rows}
+import store
 
 
 def _passes_liquidity_floor(df: pd.DataFrame) -> bool:
@@ -40,11 +27,12 @@ def _passes_liquidity_floor(df: pd.DataFrame) -> bool:
 
 
 def run(limit: int | None = None) -> list[str]:
-    init_db()
-    skip = _already_tracked()
-    universe = [t for t in _get_universe(limit) if t not in skip]
+    store.init_store()
+    skip = store.get_tracked_tickers()
+    universe = [t for t in store.get_universe(limit) if t not in skip]
     today = dt.date.today().isoformat()
     promoted = []
+    watchlist_rows, history_rows, alert_rows = [], [], []
 
     bars, unresolved = market_data.fetch_all(universe)
     for ticker, df in bars.items():
@@ -58,42 +46,32 @@ def run(limit: int | None = None) -> list[str]:
         if not signals.passes_discovery_threshold(latest):
             continue
 
-        _promote(ticker, today, latest)
+        watchlist_rows.append({
+            "ticker": ticker, "entry_date": today, "entry_price": latest["Close"],
+            "entry_score": latest["composite_score"], "peak_price": latest["Close"],
+            "peak_rsi": latest["rsi"], "status": "watching", "last_updated": today,
+        })
+        history_rows.append({
+            "ticker": ticker, "date": today, "price": latest["Close"],
+            "volume": int(latest["Volume"]), "return_z": latest["return_z"],
+            "volume_ratio": latest["volume_ratio"], "rsi": latest["rsi"],
+            "composite_score": latest["composite_score"], "status_at_time": "watching",
+        })
+        alert_rows.append({
+            "ticker": ticker, "date": today, "alert_type": "entry",
+            "detail": f"score={latest['composite_score']:.2f} rsi={latest['rsi']:.1f}",
+        })
         promoted.append(ticker)
+
+    store.insert_watchlist_rows(watchlist_rows)
+    store.append_history_rows(history_rows)
+    store.append_alert_rows(alert_rows)
 
     if unresolved:
         print(f"[scanner] {len(unresolved)} ticker(s) never got usable data this run "
               f"(rate-limited or delisted) -- not evaluated")
 
     return promoted
-
-
-def _promote(ticker: str, today: str, latest: pd.Series) -> None:
-    with connect() as conn:
-        conn.execute(
-            """
-            INSERT INTO watchlist (ticker, entry_date, entry_price, entry_score,
-                                    peak_price, peak_rsi, status)
-            VALUES (?, ?, ?, ?, ?, ?, 'watching')
-            ON CONFLICT(ticker) DO NOTHING
-            """,
-            (ticker, today, latest["Close"], latest["composite_score"],
-             latest["Close"], latest["rsi"]),
-        )
-        conn.execute(
-            """
-            INSERT INTO watchlist_history (ticker, date, price, volume, return_z,
-                                            volume_ratio, rsi, composite_score, status_at_time)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'watching')
-            ON CONFLICT(ticker, date) DO NOTHING
-            """,
-            (ticker, today, latest["Close"], int(latest["Volume"]), latest["return_z"],
-             latest["volume_ratio"], latest["rsi"], latest["composite_score"]),
-        )
-        conn.execute(
-            "INSERT INTO alerts (ticker, date, alert_type, detail) VALUES (?, ?, 'entry', ?)",
-            (ticker, today, f"score={latest['composite_score']:.2f} rsi={latest['rsi']:.1f}"),
-        )
 
 
 if __name__ == "__main__":

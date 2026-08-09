@@ -9,13 +9,13 @@ from __future__ import annotations
 import argparse
 
 import scanner
+import store
 import tracker
 import universe
-from db import init_db
 
 
 def main(limit: int | None = None) -> None:
-    init_db()
+    store.init_store()
 
     n = universe.sync_universe()
     print(f"[universe] synced {n} tickers")

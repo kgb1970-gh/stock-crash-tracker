@@ -10,7 +10,7 @@ import io
 import requests
 
 import config
-from db import connect
+import store
 
 EXCHANGE_NAMES = {
     "A": "NYSE American",
@@ -65,25 +65,11 @@ def _parse_other_listed() -> list[dict]:
 
 def sync_universe() -> int:
     rows = _parse_nasdaq_listed() + _parse_other_listed()
-    with connect() as conn:
-        conn.executemany(
-            """
-            INSERT INTO tickers (ticker, name, exchange, asset_type, updated_at)
-            VALUES (:ticker, :name, :exchange, :asset_type, datetime('now'))
-            ON CONFLICT(ticker) DO UPDATE SET
-                name = excluded.name,
-                exchange = excluded.exchange,
-                asset_type = excluded.asset_type,
-                updated_at = excluded.updated_at
-            """,
-            rows,
-        )
+    store.upsert_tickers(rows)
     return len(rows)
 
 
 if __name__ == "__main__":
-    from db import init_db
-
-    init_db()
+    store.init_store()
     n = sync_universe()
     print(f"Synced {n} tickers")

@@ -2,7 +2,7 @@
 
 import os
 
-DB_PATH = os.environ.get("STOCK_TRACKER_DB", "tracker.db")
+DATA_DIR = os.environ.get("STOCK_TRACKER_DATA_DIR", "data")
 
 # --- Universe ---
 # NASDAQ Trader publishes these for free, no auth needed.
