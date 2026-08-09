@@ -1,0 +1,32 @@
+"""Thresholds and knobs for the scanner and tracker. Tune these as you observe real results."""
+
+import os
+
+DB_PATH = os.environ.get("STOCK_TRACKER_DB", "tracker.db")
+
+# --- Universe ---
+# NASDAQ Trader publishes these for free, no auth needed.
+NASDAQ_LISTED_URL = "https://www.nasdaqtrader.com/dynamic/SymDir/nasdaqlisted.txt"
+OTHER_LISTED_URL = "https://www.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt"
+
+# --- Scanner (discovery) ---
+LOOKBACK_DAYS = 90          # history pulled per ticker to compute rolling signals
+RETURN_WINDOW = 10          # N-day return used for the "unusual move" check
+VOLUME_AVG_WINDOW = 20      # rolling average volume window
+RSI_WINDOW = 14
+BOLLINGER_WINDOW = 20
+BOLLINGER_STD = 2
+
+RETURN_Z_THRESHOLD = 2.5    # 10-day return this many std devs above the ticker's own norm
+VOLUME_RATIO_THRESHOLD = 2.0  # today's volume vs 20-day average
+RSI_OVERBOUGHT = 75
+
+MIN_PRICE = 3.0             # skip penny/junk tickers
+MIN_AVG_VOLUME = 100_000    # skip illiquid tickers
+
+CHUNK_SIZE = 100            # tickers per yfinance batch download call
+
+# --- Tracker (reversal / short-signal detection) ---
+DRAWDOWN_FROM_PEAK_PCT = 0.15   # 15% off the peak recorded since entering watchlist
+RSI_ROLLOVER_FROM = 70          # RSI must have been >= this at some point while watching
+STALE_AFTER_DAYS = 45           # drop from watchlist if never triggers and never reverses
