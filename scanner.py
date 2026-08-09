@@ -13,9 +13,9 @@ import argparse
 import datetime as dt
 
 import pandas as pd
-import yfinance as yf
 
 import config
+import market_data
 import signals
 from db import connect, init_db
 
@@ -33,34 +33,6 @@ def _already_tracked() -> set[str]:
     return {r["ticker"] for r in rows}
 
 
-def _chunks(seq: list, size: int):
-    for i in range(0, len(seq), size):
-        yield seq[i : i + size]
-
-
-def _download_chunk(tickers: list[str]) -> dict[str, pd.DataFrame]:
-    raw = yf.download(
-        tickers=tickers,
-        period=f"{config.LOOKBACK_DAYS}d",
-        group_by="ticker",
-        auto_adjust=True,
-        threads=True,
-        progress=False,
-    )
-    out = {}
-    for t in tickers:
-        try:
-            # yfinance returns MultiIndex columns keyed by ticker whenever a list is
-            # passed in, even a list of length 1 -- so always index by ticker here.
-            df = raw[t]
-            df = df.dropna(subset=["Close", "Volume"])
-            if not df.empty:
-                out[t] = df
-        except (KeyError, TypeError):
-            continue  # ticker had no data (delisted, bad symbol, etc.)
-    return out
-
-
 def _passes_liquidity_floor(df: pd.DataFrame) -> bool:
     latest_close = df["Close"].iloc[-1]
     avg_volume = df["Volume"].tail(config.VOLUME_AVG_WINDOW).mean()
@@ -74,21 +46,24 @@ def run(limit: int | None = None) -> list[str]:
     today = dt.date.today().isoformat()
     promoted = []
 
-    for chunk in _chunks(universe, config.CHUNK_SIZE):
-        bars = _download_chunk(chunk)
-        for ticker, df in bars.items():
-            if len(df) < 60 or not _passes_liquidity_floor(df):
-                continue
+    bars, unresolved = market_data.fetch_all(universe)
+    for ticker, df in bars.items():
+        if len(df) < 60 or not _passes_liquidity_floor(df):
+            continue
 
-            scored = signals.compute_all(df)
-            latest = scored.iloc[-1]
-            if latest[["return_z", "volume_ratio", "rsi"]].isna().any():
-                continue
-            if not signals.passes_discovery_threshold(latest):
-                continue
+        scored = signals.compute_all(df)
+        latest = scored.iloc[-1]
+        if latest[["return_z", "volume_ratio", "rsi"]].isna().any():
+            continue
+        if not signals.passes_discovery_threshold(latest):
+            continue
 
-            _promote(ticker, today, latest)
-            promoted.append(ticker)
+        _promote(ticker, today, latest)
+        promoted.append(ticker)
+
+    if unresolved:
+        print(f"[scanner] {len(unresolved)} ticker(s) never got usable data this run "
+              f"(rate-limited or delisted) -- not evaluated")
 
     return promoted
 

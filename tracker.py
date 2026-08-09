@@ -14,7 +14,7 @@ import pandas as pd
 
 import config
 from db import connect
-from scanner import _chunks, _download_chunk
+import market_data
 import signals
 
 
@@ -31,33 +31,36 @@ def run() -> dict[str, list[str]]:
     today = dt.date.today().isoformat()
     result = {"short_signal": [], "stale": [], "updated": []}
 
-    for chunk in _chunks([r["ticker"] for r in tracked], config.CHUNK_SIZE):
-        bars = _download_chunk(chunk)
-        by_ticker = {r["ticker"]: r for r in tracked}
+    by_ticker = {r["ticker"]: r for r in tracked}
+    bars, unresolved = market_data.fetch_all(list(by_ticker.keys()))
 
-        for ticker, df in bars.items():
-            row = by_ticker[ticker]
-            if len(df) < 20:
-                continue
+    for ticker, df in bars.items():
+        row = by_ticker[ticker]
+        if len(df) < 20:
+            continue
 
-            scored = signals.compute_all(df)
-            latest = scored.iloc[-1]
-            if pd.isna(latest["Close"]):
-                continue
+        scored = signals.compute_all(df)
+        latest = scored.iloc[-1]
+        if pd.isna(latest["Close"]):
+            continue
 
-            new_peak_price = max(row["peak_price"], latest["Close"])
-            new_peak_rsi = max(row["peak_rsi"], latest["rsi"]) if not pd.isna(latest["rsi"]) else row["peak_rsi"]
+        new_peak_price = max(row["peak_price"], latest["Close"])
+        new_peak_rsi = max(row["peak_rsi"], latest["rsi"]) if not pd.isna(latest["rsi"]) else row["peak_rsi"]
 
-            _append_history(ticker, today, latest, row["status"])
+        _append_history(ticker, today, latest, row["status"])
 
-            new_status, reason = _evaluate(row, new_peak_price, new_peak_rsi, latest, today)
-            _update_watchlist(ticker, new_peak_price, new_peak_rsi, new_status)
+        new_status, reason = _evaluate(row, new_peak_price, new_peak_rsi, latest, today)
+        _update_watchlist(ticker, new_peak_price, new_peak_rsi, new_status)
 
-            if new_status != row["status"]:
-                _alert(ticker, today, new_status, reason)
-                result[new_status].append(ticker)
-            else:
-                result["updated"].append(ticker)
+        if new_status != row["status"]:
+            _alert(ticker, today, new_status, reason)
+            result[new_status].append(ticker)
+        else:
+            result["updated"].append(ticker)
+
+    if unresolved:
+        print(f"[tracker] {len(unresolved)} tracked ticker(s) had no usable data this run "
+              f"(rate-limited?), left unchanged: {unresolved}")
 
     return result
 

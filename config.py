@@ -24,7 +24,12 @@ RSI_OVERBOUGHT = 75
 MIN_PRICE = 3.0             # skip penny/junk tickers
 MIN_AVG_VOLUME = 100_000    # skip illiquid tickers
 
-CHUNK_SIZE = 100            # tickers per yfinance batch download call
+CHUNK_SIZE = 50             # tickers per yfinance batch download call
+REQUEST_DELAY_SECONDS = 3   # pause between chunk downloads, to avoid tripping rate limits
+MAX_CHUNK_RETRIES = 3       # retry passes for chunks that look rate-limited
+RATE_LIMIT_BACKOFF_SECONDS = 30       # base backoff before a retry pass; multiplied by attempt #
+RATE_LIMIT_FAILURE_THRESHOLD = 0.3    # >=30% of a chunk failing is treated as rate limiting,
+                                       # not just a few delisted/bad symbols
 
 # --- Tracker (reversal / short-signal detection) ---
 DRAWDOWN_FROM_PEAK_PCT = 0.15   # 15% off the peak recorded since entering watchlist
