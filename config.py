@@ -37,7 +37,10 @@ RATE_LIMIT_FAILURE_THRESHOLD = 0.3    # >=30% of a chunk failing is treated as r
 # --- Tracker (reversal / short-signal detection) ---
 DRAWDOWN_FROM_PEAK_PCT = 0.15   # 15% off the peak recorded since entering watchlist
 RSI_ROLLOVER_FROM = 70          # RSI must have been >= this at some point while watching
-STALE_AFTER_DAYS = 45           # drop from watchlist if never triggers and never reverses
+FLAT_DAYS_WITHOUT_NEW_PEAK = 7  # no new high in this many days, and never triggered ->
+                                 # "faded": the extension fizzled, not worth watching further
+STALE_AFTER_DAYS = 45           # rare backstop for a ticker that keeps grinding out small
+                                 # new highs (so it never goes flat) without ever triggering
 
 # --- Post-signal outcome tracking ---
 SHORT_TRACK_DAYS = 20   # once short_signal fires, keep tracking the running low for this

@@ -20,7 +20,7 @@ import config
 
 TICKERS_COLUMNS = ["ticker", "name", "exchange", "asset_type", "updated_at"]
 WATCHLIST_COLUMNS = ["ticker", "entry_date", "entry_price", "entry_score",
-                      "peak_price", "peak_rsi", "status", "last_updated",
+                      "peak_price", "peak_rsi", "peak_date", "status", "last_updated",
                       "signal_date", "signal_price", "min_price_since_signal", "min_price_date"]
 HISTORY_COLUMNS = ["ticker", "date", "price", "volume", "return_z", "volume_ratio",
                     "rsi", "composite_score", "status_at_time"]

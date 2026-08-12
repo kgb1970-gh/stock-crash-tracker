@@ -50,7 +50,8 @@ def run(limit: int | None = None) -> list[str]:
         watchlist_rows.append({
             "ticker": ticker, "entry_date": today, "entry_price": latest["Close"],
             "entry_score": latest["composite_score"], "peak_price": latest["Close"],
-            "peak_rsi": latest["rsi"], "status": "watching", "last_updated": today,
+            "peak_rsi": latest["rsi"], "peak_date": today,
+            "status": "watching", "last_updated": today,
         })
         history_rows.append({
             "ticker": ticker, "date": today, "price": latest["Close"],

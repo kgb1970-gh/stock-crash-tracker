@@ -2,7 +2,9 @@
 
     watching --(price falls DRAWDOWN_FROM_PEAK_PCT off its peak, or RSI rolls over
                  hard from an overbought peak)--> short_signal
-    watching --(never triggers within STALE_AFTER_DAYS)--> stale
+    watching --(no new high in FLAT_DAYS_WITHOUT_NEW_PEAK)--> faded
+    watching --(rare backstop: never goes flat, never triggers, STALE_AFTER_DAYS
+                 elapses)--> stale
 
     short_signal --(tracks the running low daily)--> short_signal
     short_signal --(SHORT_TRACK_DAYS after the trigger)--> closed
@@ -25,7 +27,7 @@ import store
 def run() -> dict[str, list[str]]:
     tracked = store.get_tracked_rows()
     today = dt.date.today().isoformat()
-    result = {"short_signal": [], "closed": [], "stale": [], "updated": []}
+    result = {"short_signal": [], "closed": [], "faded": [], "stale": [], "updated": []}
 
     by_ticker = {r["ticker"]: r for r in tracked}
     bars, unresolved = market_data.fetch_all(list(by_ticker.keys()))
@@ -80,16 +82,24 @@ def run() -> dict[str, list[str]]:
 
 
 def _evaluate_watching(row: dict, latest: pd.Series, today: str):
+    entry_date = dt.date.fromisoformat(row["entry_date"])
+    today_date = dt.date.fromisoformat(today)
+
+    made_new_high = latest["Close"] > row["peak_price"]
     new_peak_price = max(row["peak_price"], latest["Close"])
     new_peak_rsi = max(row["peak_rsi"], latest["rsi"]) if not pd.isna(latest["rsi"]) else row["peak_rsi"]
+    # peak_date may be missing on rows written before this column existed --
+    # treat that as "never beaten since entry", which is the conservative default.
+    peak_date = dt.date.fromisoformat(row["peak_date"]) if not pd.isna(row.get("peak_date")) else entry_date
+    new_peak_date = today if made_new_high else peak_date.isoformat()
 
-    entry_date = dt.date.fromisoformat(row["entry_date"])
-    days_tracked = (dt.date.fromisoformat(today) - entry_date).days
+    days_tracked = (today_date - entry_date).days
+    days_since_peak = (today_date - peak_date).days
 
     drawdown_pct = (new_peak_price - latest["Close"]) / new_peak_price if new_peak_price else 0
     rsi_rolled_over = new_peak_rsi >= config.RSI_ROLLOVER_FROM and latest["rsi"] < 50
 
-    updates = {"peak_price": new_peak_price, "peak_rsi": new_peak_rsi,
+    updates = {"peak_price": new_peak_price, "peak_rsi": new_peak_rsi, "peak_date": new_peak_date,
                "status": "watching", "last_updated": today}
 
     if drawdown_pct >= config.DRAWDOWN_FROM_PEAK_PCT:
@@ -98,6 +108,9 @@ def _evaluate_watching(row: dict, latest: pd.Series, today: str):
     if rsi_rolled_over and latest["Close"] < new_peak_price:
         updates.update(_start_signal_tracking(latest, today))
         return "short_signal", f"RSI rolled over from {new_peak_rsi:.1f} to {latest['rsi']:.1f}", updates
+    if days_since_peak >= config.FLAT_DAYS_WITHOUT_NEW_PEAK:
+        updates["status"] = "faded"
+        return "faded", f"no new high in {days_since_peak}d, never triggered", updates
     if days_tracked >= config.STALE_AFTER_DAYS:
         updates["status"] = "stale"
         return "stale", f"no trigger after {days_tracked} days", updates
@@ -149,5 +162,6 @@ if __name__ == "__main__":
     summary = run()
     print(f"short_signal: {summary['short_signal']}")
     print(f"closed: {summary['closed']}")
+    print(f"faded: {summary['faded']}")
     print(f"stale: {summary['stale']}")
     print(f"still active ({len(summary['updated'])}): {summary['updated']}")
