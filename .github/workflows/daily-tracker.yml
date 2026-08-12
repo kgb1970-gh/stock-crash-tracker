@@ -1,0 +1,41 @@
+name: daily-tracker-update
+
+on:
+  schedule:
+    # 22:30 UTC, weekdays -- an hour after daily-discovery-scan.yml starts. The
+    # scanner takes ~30min (full universe); this only touches the ~40-ticker
+    # watchlist and finishes in well under a minute, but runs as its own job
+    # so it's never blocked by a scanner failure or timeout.
+    - cron: '30 22 * * 1-5'
+  workflow_dispatch: {}
+
+concurrency:
+  group: daily-tracker-update
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  track:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install -r requirements.txt
+
+      - run: python tracker.py
+
+      - name: Commit tracked updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase
+          git add data/watchlist.csv data/watchlist_history.csv data/alerts.csv
+          git diff --cached --quiet || git commit -m "Tracker update: $(date -u +%Y-%m-%d)"
+          git push
