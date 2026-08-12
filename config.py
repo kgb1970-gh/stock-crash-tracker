@@ -21,8 +21,11 @@ RETURN_Z_THRESHOLD = 2.5    # 10-day return this many std devs above the ticker'
 VOLUME_RATIO_THRESHOLD = 2.0  # today's volume vs 20-day average
 RSI_OVERBOUGHT = 75
 
-MIN_PRICE = 3.0             # skip penny/junk tickers
-MIN_AVG_VOLUME = 100_000    # skip illiquid tickers
+MIN_PRICE = 3.0                    # skip penny/junk tickers
+MIN_AVG_DOLLAR_VOLUME = 5_000_000  # skip illiquid tickers: 20-day avg (price * volume)
+                                    # below this. Dollar volume, not share count, since
+                                    # 100k shares of a $3 stock and 100k shares of a $300
+                                    # stock are not comparably liquid.
 
 CHUNK_SIZE = 50             # tickers per yfinance batch download call
 REQUEST_DELAY_SECONDS = 3   # pause between chunk downloads, to avoid tripping rate limits

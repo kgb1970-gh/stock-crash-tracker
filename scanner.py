@@ -22,8 +22,9 @@ import store
 
 def _passes_liquidity_floor(df: pd.DataFrame) -> bool:
     latest_close = df["Close"].iloc[-1]
-    avg_volume = df["Volume"].tail(config.VOLUME_AVG_WINDOW).mean()
-    return latest_close >= config.MIN_PRICE and avg_volume >= config.MIN_AVG_VOLUME
+    window = df.tail(config.VOLUME_AVG_WINDOW)
+    avg_dollar_volume = (window["Close"] * window["Volume"]).mean()
+    return latest_close >= config.MIN_PRICE and avg_dollar_volume >= config.MIN_AVG_DOLLAR_VOLUME
 
 
 def run(limit: int | None = None) -> list[str]:
