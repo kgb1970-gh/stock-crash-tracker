@@ -76,15 +76,30 @@ def _write_atomic(df: pd.DataFrame, path: str) -> None:
 
 # --- tickers ---
 
+_TICKER_COMPARE_COLUMNS = ["name", "exchange", "asset_type"]
+
+
 def upsert_tickers(rows: list[dict]) -> int:
+    """Only bumps updated_at (and rewrites the row) for tickers that are new or
+    actually changed. Otherwise a full universe sync touches all ~13,000 rows on
+    every run just from timestamp churn, which defeats the point of CSVs being
+    git-diff-friendly.
+    """
     if not rows:
         return 0
-    existing = _read(TICKERS_CSV, TICKERS_COLUMNS)
-    new = pd.DataFrame(rows)
-    new["updated_at"] = dt.datetime.now().isoformat()
-    combined = pd.concat([existing, new], ignore_index=True)
-    combined = combined.drop_duplicates(subset="ticker", keep="last")
-    combined = combined.sort_values("ticker").reset_index(drop=True)
+    now = dt.datetime.now().isoformat()
+    new = pd.DataFrame(rows).set_index("ticker")
+    existing = _read(TICKERS_CSV, TICKERS_COLUMNS).set_index("ticker")
+
+    new["updated_at"] = now
+    if not existing.empty:
+        common = new.index.intersection(existing.index)
+        unchanged = common[
+            (new.loc[common, _TICKER_COMPARE_COLUMNS] == existing.loc[common, _TICKER_COMPARE_COLUMNS]).all(axis=1)
+        ]
+        new.loc[unchanged, "updated_at"] = existing.loc[unchanged, "updated_at"]
+
+    combined = new.sort_index().reset_index()
     _write_atomic(combined, TICKERS_CSV)
     return len(new)
 
