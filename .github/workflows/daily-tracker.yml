@@ -36,6 +36,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git pull --rebase
-          git add data/watchlist.csv data/watchlist_history.csv data/alerts.csv
+          git add data/watchlist.csv data/watchlist_history.csv data/alerts.csv \
+                  data/signal_outcomes.csv data/indicators.csv
           git diff --cached --quiet || git commit -m "Tracker update: $(date -u +%Y-%m-%d)"
           git push

@@ -20,10 +20,15 @@ import config
 
 TICKERS_COLUMNS = ["ticker", "name", "exchange", "asset_type", "updated_at"]
 WATCHLIST_COLUMNS = ["ticker", "entry_date", "entry_price", "entry_score",
-                      "peak_price", "peak_rsi", "status", "last_updated"]
+                      "peak_price", "peak_rsi", "status", "last_updated",
+                      "signal_date", "signal_price", "min_price_since_signal", "min_price_date"]
 HISTORY_COLUMNS = ["ticker", "date", "price", "volume", "return_z", "volume_ratio",
                     "rsi", "composite_score", "status_at_time"]
 ALERTS_COLUMNS = ["ticker", "date", "alert_type", "detail"]
+OUTCOMES_COLUMNS = ["ticker", "signal_date", "signal_price", "min_price", "min_price_date",
+                     "max_gain_pct", "days_to_max_gain", "closed_date"]
+INDICATORS_COLUMNS = ["sample_count", "avg_max_gain_pct", "p90_max_gain_pct",
+                       "avg_days_to_max_gain", "p90_days_to_max_gain", "updated_at"]
 
 
 def _path(name: str) -> str:
@@ -34,6 +39,8 @@ TICKERS_CSV = _path("tickers.csv")
 WATCHLIST_CSV = _path("watchlist.csv")
 HISTORY_CSV = _path("watchlist_history.csv")
 ALERTS_CSV = _path("alerts.csv")
+OUTCOMES_CSV = _path("signal_outcomes.csv")
+INDICATORS_CSV = _path("indicators.csv")
 
 
 def init_store() -> None:
@@ -43,6 +50,8 @@ def init_store() -> None:
         (WATCHLIST_CSV, WATCHLIST_COLUMNS),
         (HISTORY_CSV, HISTORY_COLUMNS),
         (ALERTS_CSV, ALERTS_COLUMNS),
+        (OUTCOMES_CSV, OUTCOMES_COLUMNS),
+        (INDICATORS_CSV, INDICATORS_COLUMNS),
     ):
         if not os.path.exists(path):
             pd.DataFrame(columns=columns).to_csv(path, index=False)
@@ -58,7 +67,20 @@ def _read(path: str, columns: list[str]) -> pd.DataFrame:
     if not os.path.exists(path):
         return pd.DataFrame(columns=columns)
     na_values = {c: _NA_MARKERS for c in columns if c != "ticker"}
-    return pd.read_csv(path, keep_default_na=False, na_values=na_values, dtype={"ticker": str})
+    df = pd.read_csv(path, keep_default_na=False, na_values=na_values, dtype={"ticker": str})
+    # Reindex to the current schema so a column added after old rows were written
+    # (e.g. signal_date) doesn't KeyError -- missing cells just read back as NaN.
+    return df.reindex(columns=columns)
+
+
+def _append(existing: pd.DataFrame, rows: list[dict], columns: list[str]) -> pd.DataFrame:
+    """Concat that doesn't warn/misbehave when `existing` is empty -- an empty
+    DataFrame still carries dtype info pandas wants to reconcile during concat,
+    which is noisy (and slated to change) when there's nothing to reconcile."""
+    new = pd.DataFrame(rows).reindex(columns=columns)
+    if existing.empty:
+        return new
+    return pd.concat([existing, new], ignore_index=True)
 
 
 def _write_atomic(df: pd.DataFrame, path: str) -> None:
@@ -112,14 +134,21 @@ def get_universe(limit: int | None = None) -> list[str]:
 
 # --- watchlist ---
 
+_ACTIVE_STATUSES = ["watching", "short_signal"]
+
+
 def get_tracked_tickers() -> set[str]:
+    """Tickers currently in any active state -- scanner.py uses this to avoid
+    re-promoting something that's already being watched or tracked post-signal."""
     df = _read(WATCHLIST_CSV, WATCHLIST_COLUMNS)
-    return set(df.loc[df["status"] == "watching", "ticker"])
+    return set(df.loc[df["status"].isin(_ACTIVE_STATUSES), "ticker"])
 
 
 def get_tracked_rows() -> list[dict]:
+    """Rows tracker.py needs to process this run: both tickers still being watched
+    for a reversal, and tickers past that whose post-signal outcome is still open."""
     df = _read(WATCHLIST_CSV, WATCHLIST_COLUMNS)
-    return df.loc[df["status"] == "watching"].to_dict("records")
+    return df.loc[df["status"].isin(_ACTIVE_STATUSES)].to_dict("records")
 
 
 def get_watchlist_rows() -> list[dict]:
@@ -135,7 +164,7 @@ def insert_watchlist_rows(rows: list[dict]) -> None:
     new_rows = [r for r in rows if r["ticker"] not in existing]
     if not new_rows:
         return
-    df = pd.concat([df, pd.DataFrame(new_rows)], ignore_index=True)
+    df = _append(df, new_rows, WATCHLIST_COLUMNS)
     _write_atomic(df, WATCHLIST_CSV)
 
 
@@ -143,7 +172,9 @@ def update_watchlist_rows(updates: dict[str, dict]) -> None:
     """updates: {ticker: {field: value, ...}}"""
     if not updates:
         return
-    df = _read(WATCHLIST_CSV, WATCHLIST_COLUMNS).set_index("ticker")
+    # A column that's all-NaN so far (e.g. signal_date before any signal has fired)
+    # reads back as float64; assigning a string into it would raise in future pandas.
+    df = _read(WATCHLIST_CSV, WATCHLIST_COLUMNS).astype(object).set_index("ticker")
     for ticker, fields in updates.items():
         if ticker in df.index:
             for key, value in fields.items():
@@ -156,8 +187,7 @@ def update_watchlist_rows(updates: dict[str, dict]) -> None:
 def append_history_rows(rows: list[dict]) -> None:
     if not rows:
         return
-    df = _read(HISTORY_CSV, HISTORY_COLUMNS)
-    combined = pd.concat([df, pd.DataFrame(rows)], ignore_index=True)
+    combined = _append(_read(HISTORY_CSV, HISTORY_COLUMNS), rows, HISTORY_COLUMNS)
     combined = combined.drop_duplicates(subset=["ticker", "date"], keep="last")
     combined = combined.sort_values(["ticker", "date"]).reset_index(drop=True)
     _write_atomic(combined, HISTORY_CSV)
@@ -168,6 +198,35 @@ def append_history_rows(rows: list[dict]) -> None:
 def append_alert_rows(rows: list[dict]) -> None:
     if not rows:
         return
-    df = _read(ALERTS_CSV, ALERTS_COLUMNS)
-    combined = pd.concat([df, pd.DataFrame(rows)], ignore_index=True)
+    combined = _append(_read(ALERTS_CSV, ALERTS_COLUMNS), rows, ALERTS_COLUMNS)
     _write_atomic(combined, ALERTS_CSV)
+
+
+# --- signal_outcomes / indicators ---
+
+def append_outcome_rows(rows: list[dict]) -> None:
+    """One row per short_signal that finished its SHORT_TRACK_DAYS tracking window:
+    how far it fell from the signal price, and how many days that took."""
+    if not rows:
+        return
+    combined = _append(_read(OUTCOMES_CSV, OUTCOMES_COLUMNS), rows, OUTCOMES_COLUMNS)
+    combined = combined.drop_duplicates(subset=["ticker", "signal_date"], keep="last")
+    _write_atomic(combined, OUTCOMES_CSV)
+
+
+def recompute_indicators() -> None:
+    """Rebuilds indicators.csv from every closed-out outcome to date. A single
+    summary row -- avg/p90 of how far a signal falls and how long that takes --
+    that gets more meaningful as more signals close out."""
+    df = _read(OUTCOMES_CSV, OUTCOMES_COLUMNS)
+    if df.empty:
+        return
+    row = {
+        "sample_count": len(df),
+        "avg_max_gain_pct": df["max_gain_pct"].mean(),
+        "p90_max_gain_pct": df["max_gain_pct"].quantile(0.9),
+        "avg_days_to_max_gain": df["days_to_max_gain"].mean(),
+        "p90_days_to_max_gain": df["days_to_max_gain"].quantile(0.9),
+        "updated_at": dt.datetime.now().isoformat(),
+    }
+    _write_atomic(pd.DataFrame([row]), INDICATORS_CSV)

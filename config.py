@@ -38,3 +38,9 @@ RATE_LIMIT_FAILURE_THRESHOLD = 0.3    # >=30% of a chunk failing is treated as r
 DRAWDOWN_FROM_PEAK_PCT = 0.15   # 15% off the peak recorded since entering watchlist
 RSI_ROLLOVER_FROM = 70          # RSI must have been >= this at some point while watching
 STALE_AFTER_DAYS = 45           # drop from watchlist if never triggers and never reverses
+
+# --- Post-signal outcome tracking ---
+SHORT_TRACK_DAYS = 20   # once short_signal fires, keep tracking the running low for this
+                         # many days before closing the outcome out and folding it into
+                         # indicators.csv -- this is what measures "how far did it actually
+                         # fall, and how long did that take"
