@@ -1,49 +1,47 @@
-"""Thresholds and knobs for the scanner and tracker. Tune these as you observe real results."""
+"""Loads config.yaml and flattens it into module-level attributes, so the rest of
+the codebase can keep doing `import config; config.SOME_VALUE`. Tune values in
+config.yaml, not here.
+"""
 
 import os
 
-DATA_DIR = os.environ.get("STOCK_TRACKER_DATA_DIR", "data")
+import yaml
 
-# --- Universe ---
-# NASDAQ Trader publishes these for free, no auth needed.
-NASDAQ_LISTED_URL = "https://www.nasdaqtrader.com/dynamic/SymDir/nasdaqlisted.txt"
-OTHER_LISTED_URL = "https://www.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt"
+_CONFIG_PATH = os.environ.get(
+    "STOCK_TRACKER_CONFIG", os.path.join(os.path.dirname(__file__), "config.yaml")
+)
 
-# --- Scanner (discovery) ---
-LOOKBACK_DAYS = 90          # history pulled per ticker to compute rolling signals
-RETURN_WINDOW = 10          # N-day return used for the "unusual move" check
-VOLUME_AVG_WINDOW = 20      # rolling average volume window
-RSI_WINDOW = 14
-BOLLINGER_WINDOW = 20
-BOLLINGER_STD = 2
+with open(_CONFIG_PATH) as _f:
+    _raw = yaml.safe_load(_f)
 
-RETURN_Z_THRESHOLD = 2.5    # 10-day return this many std devs above the ticker's own norm
-VOLUME_RATIO_THRESHOLD = 2.0  # today's volume vs 20-day average
-RSI_OVERBOUGHT = 75
+DATA_DIR = os.environ.get("STOCK_TRACKER_DATA_DIR", _raw["data_dir"])
 
-MIN_PRICE = 3.0                    # skip penny/junk tickers
-MIN_AVG_DOLLAR_VOLUME = 5_000_000  # skip illiquid tickers: 20-day avg (price * volume)
-                                    # below this. Dollar volume, not share count, since
-                                    # 100k shares of a $3 stock and 100k shares of a $300
-                                    # stock are not comparably liquid.
+NASDAQ_LISTED_URL = _raw["universe"]["nasdaq_listed_url"]
+OTHER_LISTED_URL = _raw["universe"]["other_listed_url"]
 
-CHUNK_SIZE = 50             # tickers per yfinance batch download call
-REQUEST_DELAY_SECONDS = 3   # pause between chunk downloads, to avoid tripping rate limits
-MAX_CHUNK_RETRIES = 3       # retry passes for chunks that look rate-limited
-RATE_LIMIT_BACKOFF_SECONDS = 30       # base backoff before a retry pass; multiplied by attempt #
-RATE_LIMIT_FAILURE_THRESHOLD = 0.3    # >=30% of a chunk failing is treated as rate limiting,
-                                       # not just a few delisted/bad symbols
+LOOKBACK_DAYS = _raw["scanner"]["lookback_days"]
+RETURN_WINDOW = _raw["scanner"]["return_window"]
+VOLUME_AVG_WINDOW = _raw["scanner"]["volume_avg_window"]
+RSI_WINDOW = _raw["scanner"]["rsi_window"]
+BOLLINGER_WINDOW = _raw["scanner"]["bollinger_window"]
+BOLLINGER_STD = _raw["scanner"]["bollinger_std"]
 
-# --- Tracker (reversal / short-signal detection) ---
-DRAWDOWN_FROM_PEAK_PCT = 0.15   # 15% off the peak recorded since entering watchlist
-RSI_ROLLOVER_FROM = 70          # RSI must have been >= this at some point while watching
-FLAT_DAYS_WITHOUT_NEW_PEAK = 7  # no new high in this many days, and never triggered ->
-                                 # "faded": the extension fizzled, not worth watching further
-STALE_AFTER_DAYS = 45           # rare backstop for a ticker that keeps grinding out small
-                                 # new highs (so it never goes flat) without ever triggering
+RETURN_Z_THRESHOLD = _raw["scanner"]["return_z_threshold"]
+VOLUME_RATIO_THRESHOLD = _raw["scanner"]["volume_ratio_threshold"]
+RSI_OVERBOUGHT = _raw["scanner"]["rsi_overbought"]
 
-# --- Post-signal outcome tracking ---
-SHORT_TRACK_DAYS = 20   # once short_signal fires, keep tracking the running low for this
-                         # many days before closing the outcome out and folding it into
-                         # indicators.csv -- this is what measures "how far did it actually
-                         # fall, and how long did that take"
+MIN_PRICE = _raw["scanner"]["min_price"]
+MIN_AVG_DOLLAR_VOLUME = _raw["scanner"]["min_avg_dollar_volume"]
+
+CHUNK_SIZE = _raw["market_data"]["chunk_size"]
+REQUEST_DELAY_SECONDS = _raw["market_data"]["request_delay_seconds"]
+MAX_CHUNK_RETRIES = _raw["market_data"]["max_chunk_retries"]
+RATE_LIMIT_BACKOFF_SECONDS = _raw["market_data"]["rate_limit_backoff_seconds"]
+RATE_LIMIT_FAILURE_THRESHOLD = _raw["market_data"]["rate_limit_failure_threshold"]
+
+DRAWDOWN_FROM_PEAK_PCT = _raw["tracker"]["drawdown_from_peak_pct"]
+RSI_ROLLOVER_FROM = _raw["tracker"]["rsi_rollover_from"]
+FLAT_DAYS_WITHOUT_NEW_PEAK = _raw["tracker"]["flat_days_without_new_peak"]
+STALE_AFTER_DAYS = _raw["tracker"]["stale_after_days"]
+
+SHORT_TRACK_DAYS = _raw["outcomes"]["short_track_days"]

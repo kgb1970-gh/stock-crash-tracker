@@ -1,0 +1,50 @@
+# Thresholds and knobs for the scanner and tracker. Tune these as you observe real
+# results -- this is data, not code, so changes here don't need a code review of
+# scanner.py/tracker.py to reason about.
+
+data_dir: data   # overridden by the STOCK_TRACKER_DATA_DIR env var if set
+
+universe:
+  # NASDAQ Trader publishes these for free, no auth needed.
+  nasdaq_listed_url: "https://www.nasdaqtrader.com/dynamic/SymDir/nasdaqlisted.txt"
+  other_listed_url: "https://www.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt"
+
+scanner:
+  lookback_days: 90            # history pulled per ticker to compute rolling signals
+  return_window: 10            # N-day return used for the "unusual move" check
+  volume_avg_window: 20        # rolling average volume window
+  rsi_window: 14
+  bollinger_window: 20
+  bollinger_std: 2
+
+  return_z_threshold: 2.5      # 10-day return this many std devs above the ticker's own norm
+  volume_ratio_threshold: 2.0  # today's volume vs 20-day average
+  rsi_overbought: 75
+
+  min_price: 3.0                    # skip penny/junk tickers
+  min_avg_dollar_volume: 5000000    # skip illiquid tickers: 20-day avg (price * volume)
+                                     # below this. Dollar volume, not share count, since
+                                     # 100k shares of a $3 stock and 100k shares of a $300
+                                     # stock are not comparably liquid.
+
+market_data:
+  chunk_size: 50                       # tickers per yfinance batch download call
+  request_delay_seconds: 3             # pause between chunk downloads, to avoid rate limits
+  max_chunk_retries: 3                 # retry passes for chunks that look rate-limited
+  rate_limit_backoff_seconds: 30       # base backoff before a retry pass; x attempt #
+  rate_limit_failure_threshold: 0.3    # >=30% of a chunk failing is treated as rate
+                                        # limiting, not just a few delisted/bad symbols
+
+tracker:
+  drawdown_from_peak_pct: 0.15   # 15% off the peak recorded since entering watchlist
+  rsi_rollover_from: 70          # RSI must have been >= this at some point while watching
+  flat_days_without_new_peak: 7  # no new high in this many days, and never triggered ->
+                                  # "faded": the extension fizzled, not worth watching further
+  stale_after_days: 45           # rare backstop for a ticker that keeps grinding out small
+                                  # new highs (so it never goes flat) without ever triggering
+
+outcomes:
+  short_track_days: 20   # once short_signal fires, keep tracking the running low for this
+                          # many days before closing the outcome out and folding it into
+                          # indicators.csv -- this is what measures "how far did it actually
+                          # fall, and how long did that take"
