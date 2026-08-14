@@ -38,9 +38,9 @@ market_data:
 tracker:
   drawdown_from_peak_pct: 0.15   # 15% off the peak recorded since entering watchlist
   rsi_rollover_from: 70          # RSI must have been >= this at some point while watching
-  flat_days_without_new_peak: 7  # no new high in this many days, and never triggered ->
+  flat_days_without_new_peak: 3  # no new high in this many days, and never triggered ->
                                   # "faded": the extension fizzled, not worth watching further
-  stale_after_days: 45           # rare backstop for a ticker that keeps grinding out small
+  stale_after_days: 25           # rare backstop for a ticker that keeps grinding out small
                                   # new highs (so it never goes flat) without ever triggering
 
 outcomes:
