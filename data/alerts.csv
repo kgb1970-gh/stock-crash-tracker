@@ -1,39 +1,81 @@
 ticker,date,alert_type,detail
-ABNB,2026-08-09,entry,score=7.64 rsi=79.6
-AVNT,2026-08-09,entry,score=5.07 rsi=78.2
-MB,2026-08-09,entry,score=26.42 rsi=83.7
-YJ,2026-08-09,entry,score=26.73 rsi=84.3
-FIGS,2026-08-09,entry,score=7.30 rsi=81.9
-SIL,2026-08-09,entry,score=4.76 rsi=76.0
-TEAM,2026-08-09,entry,score=7.29 rsi=75.4
 ABCL,2026-08-10,entry,score=8.86 rsi=82.7
-JWEL,2026-08-10,entry,score=26.39 rsi=83.2
-MB,2026-08-10,short_signal,down 23.8% from peak 8.92
-YJ,2026-08-10,short_signal,down 20.6% from peak 3.40
+ABNB,2026-08-09,entry,score=7.64 rsi=79.6
+ACB,2026-08-13,entry,score=6.60 rsi=86.9
 ALMR,2026-08-11,entry,score=8.32 rsi=84.6
+ATRO,2026-08-13,entry,score=4.51 rsi=77.9
+AVNT,2026-08-09,entry,score=5.07 rsi=78.2
+BMRN,2026-08-10,entry,score=4.62 rsi=78.4
+BMRN,2026-08-13,faded,"no new high in 3d, never triggered"
+BOXL,2026-08-13,entry,score=24.20 rsi=79.0
+BTG,2026-08-09,entry,score=6.38 rsi=83.2
+BTG,2026-08-13,faded,"no new high in 4d, never triggered"
+BUFR,2026-08-13,entry,score=5.15 rsi=80.4
+BWMN,2026-08-10,entry,score=16.45 rsi=89.2
+BWMN,2026-08-13,faded,"no new high in 3d, never triggered"
+CURI,2026-08-13,entry,score=17.93 rsi=93.5
+DEO,2026-08-09,entry,score=4.99 rsi=76.4
+DEO,2026-08-13,faded,"no new high in 4d, never triggered"
 EOLS,2026-08-11,entry,score=5.56 rsi=87.5
+EQX,2026-08-09,entry,score=5.07 rsi=78.5
+EQX,2026-08-13,faded,"no new high in 4d, never triggered"
+ERO,2026-08-09,entry,score=5.50 rsi=84.1
+ERO,2026-08-13,faded,"no new high in 4d, never triggered"
+FGI,2026-08-13,entry,score=25.91 rsi=91.9
+FIGS,2026-08-09,entry,score=7.30 rsi=81.9
+GDX,2026-08-09,entry,score=4.96 rsi=79.8
+GDX,2026-08-13,faded,"no new high in 4d, never triggered"
+GDXJ,2026-08-09,entry,score=4.61 rsi=77.4
+GDXJ,2026-08-13,faded,"no new high in 4d, never triggered"
+GDXU,2026-08-09,entry,score=5.21 rsi=79.2
+GDXU,2026-08-13,faded,"no new high in 4d, never triggered"
+GTN,2026-08-09,entry,score=6.49 rsi=78.6
+GTN,2026-08-13,faded,"no new high in 4d, never triggered"
+HALO,2026-08-09,entry,score=7.10 rsi=92.1
+HALO,2026-08-13,faded,"no new high in 4d, never triggered"
+HNST,2026-08-09,entry,score=6.48 rsi=83.3
+HNST,2026-08-13,faded,"no new high in 4d, never triggered"
+HZO,2026-08-10,entry,score=15.98 rsi=84.8
+HZO,2026-08-13,faded,"no new high in 3d, never triggered"
+IAG,2026-08-09,entry,score=5.33 rsi=78.5
+IAG,2026-08-13,faded,"no new high in 4d, never triggered"
+ICUI,2026-08-09,entry,score=5.00 rsi=76.7
+ICUI,2026-08-13,faded,"no new high in 4d, never triggered"
+JWEL,2026-08-10,entry,score=26.39 rsi=83.2
+JWEL,2026-08-13,short_signal,down 21.0% from peak 4.00
+MATV,2026-08-09,entry,score=7.05 rsi=92.0
+MATV,2026-08-13,faded,"no new high in 4d, never triggered"
+MB,2026-08-09,entry,score=26.42 rsi=83.7
+MB,2026-08-10,short_signal,down 23.8% from peak 8.92
+OMER,2026-08-13,entry,score=8.74 rsi=94.6
 P,2026-08-11,entry,score=5.86 rsi=87.0
 PLAG,2026-08-11,entry,score=21.36 rsi=95.5
+PLAG,2026-08-13,short_signal,down 80.6% from peak 5.81
+PLTY,2026-08-13,entry,score=4.40 rsi=78.3
+PUBM,2026-08-09,entry,score=8.58 rsi=80.9
+PUBM,2026-08-13,faded,"no new high in 4d, never triggered"
+QMCO,2026-08-13,entry,score=5.55 rsi=84.4
+RSKD,2026-08-13,entry,score=6.26 rsi=86.0
 SEPN,2026-08-11,entry,score=6.36 rsi=84.3
+SIL,2026-08-09,entry,score=4.76 rsi=76.0
 SMJF,2026-08-11,entry,score=4.59 rsi=94.0
 STIM,2026-08-11,entry,score=10.09 rsi=76.5
-WXM,2026-08-11,entry,score=24.69 rsi=83.0
-ZLAB,2026-08-11,entry,score=7.43 rsi=76.2
-ACB,2026-08-13,entry,score=6.60 rsi=86.9
-BOXL,2026-08-13,entry,score=24.20 rsi=79.0
-PLTY,2026-08-13,entry,score=4.40 rsi=78.3
-QMCO,2026-08-13,entry,score=5.55 rsi=84.4
-ZTG,2026-08-13,entry,score=7.86 rsi=82.7
-ATRO,2026-08-13,entry,score=4.51 rsi=77.9
-BUFR,2026-08-13,entry,score=5.15 rsi=80.4
-CURI,2026-08-13,entry,score=17.93 rsi=93.5
-FGI,2026-08-13,entry,score=25.91 rsi=91.9
-OMER,2026-08-13,entry,score=8.74 rsi=94.6
-RSKD,2026-08-13,entry,score=6.26 rsi=86.0
+SVV,2026-08-09,entry,score=5.02 rsi=76.2
+SVV,2026-08-13,faded,"no new high in 4d, never triggered"
 TBBB,2026-08-13,entry,score=7.71 rsi=78.2
+TEAM,2026-08-09,entry,score=7.29 rsi=75.4
 TPG,2026-08-13,entry,score=5.51 rsi=85.6
-XHG,2026-08-13,entry,score=27.20 rsi=93.4
-YSWY,2026-08-13,entry,score=4.86 rsi=77.9
-JWEL,2026-08-13,short_signal,down 21.0% from peak 4.00
-PLAG,2026-08-13,short_signal,down 80.6% from peak 5.81
+VAC,2026-08-09,entry,score=4.28 rsi=77.2
+VAC,2026-08-13,faded,"no new high in 4d, never triggered"
+VREX,2026-08-10,entry,score=19.05 rsi=95.5
+VREX,2026-08-13,faded,"no new high in 3d, never triggered"
+WPP,2026-08-09,entry,score=5.42 rsi=81.0
+WPP,2026-08-13,faded,"no new high in 4d, never triggered"
+WXM,2026-08-11,entry,score=24.69 rsi=83.0
 WXM,2026-08-13,short_signal,down 40.3% from peak 7.90
+XHG,2026-08-13,entry,score=27.20 rsi=93.4
+YJ,2026-08-09,entry,score=26.73 rsi=84.3
+YJ,2026-08-10,short_signal,down 20.6% from peak 3.40
+YSWY,2026-08-13,entry,score=4.86 rsi=77.9
+ZLAB,2026-08-11,entry,score=7.43 rsi=76.2
+ZTG,2026-08-13,entry,score=7.86 rsi=82.7
