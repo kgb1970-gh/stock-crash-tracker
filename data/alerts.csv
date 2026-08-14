@@ -1,34 +1,13 @@
 ticker,date,alert_type,detail
 ABNB,2026-08-09,entry,score=7.64 rsi=79.6
 AVNT,2026-08-09,entry,score=5.07 rsi=78.2
-EQX,2026-08-09,entry,score=5.07 rsi=78.5
-GDX,2026-08-09,entry,score=4.96 rsi=79.8
-IAG,2026-08-09,entry,score=5.33 rsi=78.5
-ICUI,2026-08-09,entry,score=5.00 rsi=76.7
 MB,2026-08-09,entry,score=26.42 rsi=83.7
-VAC,2026-08-09,entry,score=4.28 rsi=77.2
 YJ,2026-08-09,entry,score=26.73 rsi=84.3
-BTG,2026-08-09,entry,score=6.38 rsi=83.2
-DEO,2026-08-09,entry,score=4.99 rsi=76.4
-ERO,2026-08-09,entry,score=5.50 rsi=84.1
 FIGS,2026-08-09,entry,score=7.30 rsi=81.9
-GDXJ,2026-08-09,entry,score=4.61 rsi=77.4
-GDXU,2026-08-09,entry,score=5.21 rsi=79.2
-GTN,2026-08-09,entry,score=6.49 rsi=78.6
-HALO,2026-08-09,entry,score=7.10 rsi=92.1
-HNST,2026-08-09,entry,score=6.48 rsi=83.3
-MATV,2026-08-09,entry,score=7.05 rsi=92.0
-PUBM,2026-08-09,entry,score=8.58 rsi=80.9
 SIL,2026-08-09,entry,score=4.76 rsi=76.0
-SVV,2026-08-09,entry,score=5.02 rsi=76.2
 TEAM,2026-08-09,entry,score=7.29 rsi=75.4
-WPP,2026-08-09,entry,score=5.42 rsi=81.0
 ABCL,2026-08-10,entry,score=8.86 rsi=82.7
-BMRN,2026-08-10,entry,score=4.62 rsi=78.4
-BWMN,2026-08-10,entry,score=16.45 rsi=89.2
-HZO,2026-08-10,entry,score=15.98 rsi=84.8
 JWEL,2026-08-10,entry,score=26.39 rsi=83.2
-VREX,2026-08-10,entry,score=19.05 rsi=95.5
 MB,2026-08-10,short_signal,down 23.8% from peak 8.92
 YJ,2026-08-10,short_signal,down 20.6% from peak 3.40
 ALMR,2026-08-11,entry,score=8.32 rsi=84.6
@@ -58,24 +37,3 @@ YSWY,2026-08-13,entry,score=4.86 rsi=77.9
 JWEL,2026-08-13,short_signal,down 21.0% from peak 4.00
 PLAG,2026-08-13,short_signal,down 80.6% from peak 5.81
 WXM,2026-08-13,short_signal,down 40.3% from peak 7.90
-EQX,2026-08-13,faded,"no new high in 4d, never triggered"
-GDX,2026-08-13,faded,"no new high in 4d, never triggered"
-IAG,2026-08-13,faded,"no new high in 4d, never triggered"
-ICUI,2026-08-13,faded,"no new high in 4d, never triggered"
-VAC,2026-08-13,faded,"no new high in 4d, never triggered"
-BTG,2026-08-13,faded,"no new high in 4d, never triggered"
-DEO,2026-08-13,faded,"no new high in 4d, never triggered"
-ERO,2026-08-13,faded,"no new high in 4d, never triggered"
-GDXJ,2026-08-13,faded,"no new high in 4d, never triggered"
-GDXU,2026-08-13,faded,"no new high in 4d, never triggered"
-GTN,2026-08-13,faded,"no new high in 4d, never triggered"
-HALO,2026-08-13,faded,"no new high in 4d, never triggered"
-HNST,2026-08-13,faded,"no new high in 4d, never triggered"
-MATV,2026-08-13,faded,"no new high in 4d, never triggered"
-PUBM,2026-08-13,faded,"no new high in 4d, never triggered"
-SVV,2026-08-13,faded,"no new high in 4d, never triggered"
-WPP,2026-08-13,faded,"no new high in 4d, never triggered"
-BMRN,2026-08-13,faded,"no new high in 3d, never triggered"
-BWMN,2026-08-13,faded,"no new high in 3d, never triggered"
-HZO,2026-08-13,faded,"no new high in 3d, never triggered"
-VREX,2026-08-13,faded,"no new high in 3d, never triggered"
