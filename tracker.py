@@ -1,15 +1,21 @@
 """Job 3: refresh every actively-tracked ticker and run the state machine.
 
     watching --(price falls DRAWDOWN_FROM_PEAK_PCT off its peak, or RSI rolls over
-                 hard from an overbought peak)--> short_signal
+                 hard from an overbought peak)--> short_signal   (open the short)
     watching --(no new high in FLAT_DAYS_WITHOUT_NEW_PEAK)--> faded
     watching --(rare backstop: never goes flat, never triggers, STALE_AFTER_DAYS
                  elapses)--> stale
 
     short_signal --(tracks the running low daily)--> short_signal
-    short_signal --(SHORT_TRACK_DAYS after the trigger)--> closed
-                 writes an outcome row (how far it fell, how many days that took)
-                 and refreshes the aggregate indicators.
+    short_signal --(price rebounds REBOUND_FROM_LOW_PCT off the running low)--> sold
+                 the cover signal: take profit. Also doubles as a stop-loss if the
+                 short thesis fails and reverses almost immediately.
+    short_signal --(SHORT_TRACK_DAYS elapses, no clear rebound)--> closed
+                 rare backstop for a signal that just grinds lower without a clean
+                 bounce to cover on.
+
+    Both sold and closed write an outcome row (how far it fell, how many days that
+    took, and which way it resolved) and refresh the aggregate indicators.
 """
 
 from __future__ import annotations
@@ -27,7 +33,7 @@ import store
 def run() -> dict[str, list[str]]:
     tracked = store.get_tracked_rows()
     today = dt.date.today().isoformat()
-    result = {"short_signal": [], "closed": [], "faded": [], "stale": [], "updated": []}
+    result = {"short_signal": [], "sold": [], "closed": [], "faded": [], "stale": [], "updated": []}
 
     by_ticker = {r["ticker"]: r for r in tracked}
     bars, unresolved = market_data.fetch_all(list(by_ticker.keys()))
@@ -135,23 +141,39 @@ def _evaluate_short_signal(row: dict, latest: pd.Series, today: str, outcome_row
 
     signal_date = dt.date.fromisoformat(row["signal_date"])
     days_since_signal = (dt.date.fromisoformat(today) - signal_date).days
+    rebound_pct = (latest["Close"] - min_price) / min_price if min_price else 0
 
     updates = {"min_price_since_signal": min_price, "min_price_date": min_date,
                "status": "short_signal", "last_updated": today}
 
+    if rebound_pct >= config.REBOUND_FROM_LOW_PCT:
+        return _close_outcome(row, min_price, min_date, signal_date, today,
+                               "sold", "cover", outcome_rows, updates,
+                               extra=f"up {rebound_pct:.1%} off the low")
     if days_since_signal >= config.SHORT_TRACK_DAYS:
-        max_gain_pct = (row["signal_price"] - min_price) / row["signal_price"] if row["signal_price"] else 0
-        days_to_max_gain = (dt.date.fromisoformat(min_date) - signal_date).days
-        outcome_rows.append({
-            "ticker": row["ticker"], "signal_date": row["signal_date"],
-            "signal_price": row["signal_price"], "min_price": min_price,
-            "min_price_date": min_date, "max_gain_pct": max_gain_pct,
-            "days_to_max_gain": days_to_max_gain, "closed_date": today,
-        })
-        updates["status"] = "closed"
-        return "closed", f"closed out: max gain {max_gain_pct:.1%} in {days_to_max_gain}d", updates
+        return _close_outcome(row, min_price, min_date, signal_date, today,
+                               "closed", "closed out", outcome_rows, updates)
 
     return "short_signal", None, updates
+
+
+def _close_outcome(row, min_price, min_date, signal_date, today,
+                    status, verb, outcome_rows, updates, extra=None):
+    max_gain_pct = (row["signal_price"] - min_price) / row["signal_price"] if row["signal_price"] else 0
+    days_to_max_gain = (dt.date.fromisoformat(min_date) - signal_date).days
+    resolution = "sold" if status == "sold" else "timeout"
+    outcome_rows.append({
+        "ticker": row["ticker"], "signal_date": row["signal_date"],
+        "signal_price": row["signal_price"], "min_price": min_price,
+        "min_price_date": min_date, "max_gain_pct": max_gain_pct,
+        "days_to_max_gain": days_to_max_gain, "closed_date": today,
+        "resolution": resolution,
+    })
+    updates["status"] = status
+    reason = f"{verb}: banked {max_gain_pct:.1%} gain in {days_to_max_gain}d"
+    if extra:
+        reason += f" ({extra})"
+    return status, reason, updates
 
 
 def _none_if_nan(v):
@@ -161,6 +183,7 @@ def _none_if_nan(v):
 if __name__ == "__main__":
     summary = run()
     print(f"short_signal: {summary['short_signal']}")
+    print(f"sold: {summary['sold']}")
     print(f"closed: {summary['closed']}")
     print(f"faded: {summary['faded']}")
     print(f"stale: {summary['stale']}")

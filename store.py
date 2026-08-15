@@ -26,8 +26,8 @@ HISTORY_COLUMNS = ["ticker", "date", "price", "volume", "return_z", "volume_rati
                     "rsi", "composite_score", "status_at_time"]
 ALERTS_COLUMNS = ["ticker", "date", "alert_type", "detail"]
 OUTCOMES_COLUMNS = ["ticker", "signal_date", "signal_price", "min_price", "min_price_date",
-                     "max_gain_pct", "days_to_max_gain", "closed_date"]
-INDICATORS_COLUMNS = ["sample_count", "avg_max_gain_pct", "p90_max_gain_pct",
+                     "max_gain_pct", "days_to_max_gain", "closed_date", "resolution"]
+INDICATORS_COLUMNS = ["resolution", "sample_count", "avg_max_gain_pct", "p90_max_gain_pct",
                        "avg_days_to_max_gain", "p90_days_to_max_gain", "updated_at"]
 
 
@@ -205,8 +205,9 @@ def append_alert_rows(rows: list[dict]) -> None:
 # --- signal_outcomes / indicators ---
 
 def append_outcome_rows(rows: list[dict]) -> None:
-    """One row per short_signal that finished its SHORT_TRACK_DAYS tracking window:
-    how far it fell from the signal price, and how many days that took."""
+    """One row per short_signal that resolved -- either "sold" (rebounded off the
+    low, took profit) or "timeout" (tracked the full SHORT_TRACK_DAYS window without
+    a clear rebound) -- with how far it fell and how many days that took."""
     if not rows:
         return
     combined = _append(_read(OUTCOMES_CSV, OUTCOMES_COLUMNS), rows, OUTCOMES_COLUMNS)
@@ -214,14 +215,9 @@ def append_outcome_rows(rows: list[dict]) -> None:
     _write_atomic(combined, OUTCOMES_CSV)
 
 
-def recompute_indicators() -> None:
-    """Rebuilds indicators.csv from every closed-out outcome to date. A single
-    summary row -- avg/p90 of how far a signal falls and how long that takes --
-    that gets more meaningful as more signals close out."""
-    df = _read(OUTCOMES_CSV, OUTCOMES_COLUMNS)
-    if df.empty:
-        return
-    row = {
+def _indicator_row(resolution: str, df: pd.DataFrame) -> dict:
+    return {
+        "resolution": resolution,
         "sample_count": len(df),
         "avg_max_gain_pct": df["max_gain_pct"].mean(),
         "p90_max_gain_pct": df["max_gain_pct"].quantile(0.9),
@@ -229,4 +225,17 @@ def recompute_indicators() -> None:
         "p90_days_to_max_gain": df["days_to_max_gain"].quantile(0.9),
         "updated_at": dt.datetime.now().isoformat(),
     }
-    _write_atomic(pd.DataFrame([row]), INDICATORS_CSV)
+
+
+def recompute_indicators() -> None:
+    """Rebuilds indicators.csv from every resolved outcome to date: one row for
+    everything combined, plus one row each for "sold" and "timeout" so you can see
+    whether a clean cover signal captures a different profile than letting it ride
+    to the backstop. Gets more meaningful as more signals resolve."""
+    df = _read(OUTCOMES_CSV, OUTCOMES_COLUMNS)
+    if df.empty:
+        return
+    rows = [_indicator_row("all", df)]
+    for resolution, group in df.groupby("resolution"):
+        rows.append(_indicator_row(resolution, group))
+    _write_atomic(pd.DataFrame(rows), INDICATORS_CSV)

@@ -45,3 +45,4 @@ FLAT_DAYS_WITHOUT_NEW_PEAK = _raw["tracker"]["flat_days_without_new_peak"]
 STALE_AFTER_DAYS = _raw["tracker"]["stale_after_days"]
 
 SHORT_TRACK_DAYS = _raw["outcomes"]["short_track_days"]
+REBOUND_FROM_LOW_PCT = _raw["outcomes"]["rebound_from_low_pct"]

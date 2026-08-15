@@ -44,7 +44,9 @@ tracker:
                                   # new highs (so it never goes flat) without ever triggering
 
 outcomes:
-  short_track_days: 20   # once short_signal fires, keep tracking the running low for this
-                          # many days before closing the outcome out and folding it into
-                          # indicators.csv -- this is what measures "how far did it actually
-                          # fall, and how long did that take"
+  short_track_days: 20        # once short_signal fires, keep tracking the running low for
+                               # this many days as a backstop if no cover signal fires first
+  rebound_from_low_pct: 0.10  # price rebounds this much off the running low -> "sold"
+                               # (cover the short, take profit). Also acts as a stop-loss:
+                               # if the price reverses almost immediately, this fires fast
+                               # with a small captured gain instead of riding it back up.

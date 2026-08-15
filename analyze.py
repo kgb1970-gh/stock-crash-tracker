@@ -1,7 +1,7 @@
 """Standing analysis of discovery quality: do entry-time features (entry_score,
 return_z, volume_ratio, rsi) actually predict which tickers go on to confirm
-(short_signal/closed) vs fizzle (faded/stale)? Rerun anytime -- the answer gets
-more reliable as more tickers resolve.
+(short_signal/sold/closed) vs fizzle (faded/stale)? Rerun anytime -- the answer
+gets more reliable as more tickers resolve.
 
     python analyze.py
 """
@@ -12,7 +12,10 @@ import pandas as pd
 
 import store
 
-CONFIRMED = {"short_signal", "closed"}
+# CONFIRMED = the entry trigger fired at all (short_signal), regardless of how the
+# post-signal cover phase later resolved -- this is about whether entry criteria
+# predicted a reversal, not about the exit/cover strategy.
+CONFIRMED = {"short_signal", "sold", "closed"}
 FALSE_POSITIVE = {"faded", "stale"}
 PENDING = {"watching"}
 
@@ -78,9 +81,9 @@ def threshold_sweep(df: pd.DataFrame) -> None:
 
 def indicators() -> None:
     df = store._read(store.INDICATORS_CSV, store.INDICATORS_COLUMNS)
-    print("=== Post-signal outcome indicators (from closed short_signals) ===")
+    print("=== Post-signal outcome indicators (sold=covered on a rebound, timeout=hit the backstop) ===")
     if df.empty:
-        print("(no short_signal has closed out yet -- needs SHORT_TRACK_DAYS to elapse)")
+        print("(no short_signal has resolved yet -- needs a rebound or SHORT_TRACK_DAYS to elapse)")
         return
     print(df.to_string(index=False))
     print()
