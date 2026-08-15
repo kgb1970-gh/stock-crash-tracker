@@ -30,6 +30,10 @@ jobs:
       - run: pip install -r requirements.txt
 
       - run: python tracker.py
+        env:
+          NOTIFY_SMTP_USER: ${{ secrets.NOTIFY_SMTP_USER }}
+          NOTIFY_SMTP_PASSWORD: ${{ secrets.NOTIFY_SMTP_PASSWORD }}
+          NOTIFY_EMAIL_TO: ${{ secrets.NOTIFY_EMAIL_TO }}
 
       - name: Commit tracked updates
         run: |

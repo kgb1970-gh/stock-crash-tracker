@@ -188,3 +188,6 @@ if __name__ == "__main__":
     print(f"faded: {summary['faded']}")
     print(f"stale: {summary['stale']}")
     print(f"still active ({len(summary['updated'])}): {summary['updated']}")
+
+    import notify
+    notify.send(summary["short_signal"], summary["sold"])
