@@ -1,1 +1,2 @@
-ticker,signal_date,signal_price,min_price,min_price_date,max_gain_pct,days_to_max_gain,closed_date
+ticker,signal_date,signal_price,min_price,min_price_date,max_gain_pct,days_to_max_gain,closed_date,resolution
+YJ,2026-08-10,2.7,1.7400000095367432,2026-08-18,0.3555555520234285,8,2026-08-19,sold
