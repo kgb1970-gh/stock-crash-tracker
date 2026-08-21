@@ -163,3 +163,6 @@ MSBT,2026-08-21,entry,score=4.50 rsi=86.3
 RFAI,2026-08-21,entry,score=22.23 rsi=96.3
 XRPT,2026-08-21,entry,score=9.03 rsi=82.1
 XXRP,2026-08-21,entry,score=8.68 rsi=82.4
+NTWO,2026-08-21,faded,"no new high in 3d, never triggered"
+MRNX,2026-08-21,sold,cover: banked 0.0% gain in 0d (up 17.8% off the low)
+ZSTK,2026-08-21,short_signal,down 20.0% from peak 5.89
