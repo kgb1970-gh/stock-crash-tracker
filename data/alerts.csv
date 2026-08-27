@@ -207,3 +207,10 @@ CRE,2026-08-27,entry,score=24.21 rsi=87.6
 RDIB,2026-08-27,entry,score=25.69 rsi=89.0
 XPON,2026-08-27,entry,score=10.50 rsi=78.8
 XRPZ,2026-08-27,entry,score=4.70 rsi=77.4
+DFSC,2026-08-27,sold,cover: banked 28.2% gain in 4d (up 10.3% off the low)
+CDTG,2026-08-27,sold,cover: banked 46.4% gain in 5d (up 17.3% off the low)
+ETH,2026-08-27,faded,"no new high in 3d, never triggered"
+ETHB,2026-08-27,faded,"no new high in 3d, never triggered"
+ETHE,2026-08-27,faded,"no new high in 3d, never triggered"
+TETH,2026-08-27,faded,"no new high in 3d, never triggered"
+GENB,2026-08-27,short_signal,down 20.8% from peak 20.38
