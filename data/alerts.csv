@@ -220,3 +220,6 @@ BSOL,2026-08-28,entry,score=5.65 rsi=92.4
 GSOL,2026-08-28,entry,score=4.94 rsi=93.3
 HODL,2026-08-28,entry,score=4.61 rsi=87.7
 PURR,2026-08-28,entry,score=5.61 rsi=90.7
+FWDI,2026-08-28,faded,"no new high in 3d, never triggered"
+RUM,2026-08-28,faded,"no new high in 3d, never triggered"
+SOLT,2026-08-28,faded,"no new high in 3d, never triggered"
