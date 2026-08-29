@@ -223,3 +223,6 @@ PURR,2026-08-28,entry,score=5.61 rsi=90.7
 FWDI,2026-08-28,faded,"no new high in 3d, never triggered"
 RUM,2026-08-28,faded,"no new high in 3d, never triggered"
 SOLT,2026-08-28,faded,"no new high in 3d, never triggered"
+DAIC,2026-08-29,short_signal,down 19.4% from peak 5.76
+CRE,2026-08-29,short_signal,down 42.6% from peak 6.81
+XPON,2026-08-29,short_signal,down 18.8% from peak 9.17
