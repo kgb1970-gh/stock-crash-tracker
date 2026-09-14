@@ -72,6 +72,7 @@ ABLV,Able View Global Inc. - Class B Ordinary Shares,NASDAQ,stock,2026-08-11T22:
 ABLVW,Able View Global Inc. - Warrant,NASDAQ,stock,2026-08-11T22:10:07.835043
 ABM,ABM Industries Incorporated Common Stock,NYSE,stock,2026-08-11T22:10:07.835043
 ABNB,"Airbnb, Inc. - Class A Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
+ABND,American Century Core Plus Income ETF,NYSE Arca,etf,2026-09-14T16:13:35.006762
 ABOS,"Acumen Pharmaceuticals, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 ABOT,Abacus FCF Innovation Leaders ETF,Cboe BZX,etf,2026-08-11T22:10:07.835043
 ABR,Arbor Realty Trust Common Stock,NYSE,stock,2026-08-11T22:10:07.835043
@@ -95,6 +96,8 @@ ACAAU,Averin Capital Acquisition Corp. - Units,NASDAQ,stock,2026-08-11T22:10:07.
 ACAAW,Averin Capital Acquisition Corp. - Warrants,NASDAQ,stock,2026-08-11T22:10:07.835043
 ACAD,ACADIA Pharmaceuticals Inc. - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
 ACB,Aurora Cannabis Inc. - Common Shares,NASDAQ,stock,2026-08-11T22:10:07.835043
+ACBE,Pacer Metaurus Enhanced Core Income Autocallable ETF,NASDAQ,etf,2026-09-14T16:13:35.006762
+ACBH,Pacer Metaurus High Income Autocallable ETF,NASDAQ,etf,2026-09-14T16:13:35.006762
 ACCL,Acco Group Holdings Limited - Class A Ordinary Shares,NASDAQ,stock,2026-08-11T22:10:07.835043
 ACCO,Acco Brands Corporation Common Stock,NYSE,stock,2026-08-11T22:10:07.835043
 ACCS,ACCESS Newswire Inc. Common Stock,NYSE American,stock,2026-08-11T22:10:07.835043
@@ -265,6 +268,8 @@ AEXA,American Exceptionalism Acquisition Corp. A Class A Ordinary Shares,NYSE,st
 AEYE,"AudioEye, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 AFB,AllianceBernstein National Municipal Income Fund Inc,NYSE,stock,2026-08-11T22:10:07.835043
 AFCG,Advanced Flower Capital Inc. - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
+AFDM,First Trust Active Factor International ETF,NASDAQ,etf,2026-09-14T16:13:35.006762
+AFEM,First Trust Active Factor Emerging Markets ETF,NASDAQ,etf,2026-09-14T16:13:35.006762
 AFG,"American Financial Group, Inc. Common Stock",NYSE,stock,2026-08-11T22:10:07.835043
 AFGB,"American Financial Group, Inc. 5.875% Subordinated Debentures due 2059",NYSE,stock,2026-08-11T22:10:07.835043
 AFGC,"American Financial Group, Inc. 5.125% Subordinated Debentures due 2059",NYSE,stock,2026-08-11T22:10:07.835043
@@ -371,6 +376,7 @@ AIFA,"All In FutureTech Alliance, Inc. - Common Stock",NASDAQ,stock,2026-08-11T2
 AIFC,AI Financial Corporation - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
 AIFD,TCW Artificial Intelligence ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
 AIFF,"Firefly Neuroscience, Inc.  - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
+AIFR,Defiance Global Foundries ETF,NASDAQ,etf,2026-09-14T16:13:35.006762
 AIFU,AIFU Inc. - Class A Ordinary Share,NASDAQ,stock,2026-08-11T22:10:07.835043
 AIG,"American International Group, Inc. New Common Stock",NYSE,stock,2026-08-11T22:10:07.835043
 AIHY,Defiance AI Hyperscale Leaders ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
@@ -384,6 +390,7 @@ AIIR,Air Global PLC - Ordinary shares,NASDAQ,stock,2026-08-11T22:10:07.835043
 AIM,AIM ImmunoTech Inc. Common Stock,NYSE American,stock,2026-08-11T22:10:07.835043
 AIMD,"Ainos, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 AIMDW,"Ainos, Inc. - warrants",NASDAQ,stock,2026-08-11T22:10:07.835043
+AIMG,Defiance AI Magnificent 10 ETF,NASDAQ,etf,2026-09-14T16:13:35.006762
 AIMS,Acuitas Small Cap Active ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
 AIN,Albany International Corporation Common Stock,NYSE,stock,2026-08-11T22:10:07.835043
 AINF,Defiance Inference AI Chip ETF,NASDAQ,etf,2026-08-24T10:39:25.920933
@@ -494,7 +501,7 @@ ALOV,"Aldabra 4 Liquidity Opportunity Vehicle, Inc. - Class A Ordinary Shares",N
 ALOVU,"Aldabra 4 Liquidity Opportunity Vehicle, Inc. - Units",NASDAQ,stock,2026-08-11T22:10:07.835043
 ALOVW,"Aldabra 4 Liquidity Opportunity Vehicle, Inc. - Warrants",NASDAQ,stock,2026-08-11T22:10:07.835043
 ALOY,REalloys Inc. - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
-ALP,Alpha Compute Corp  - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
+ALP,Alpha Compute Corp  - Ordinary Shares,NASDAQ,stock,2026-09-14T16:13:35.006762
 ALPS,ALPS Group Inc - Ordinary Share,NASDAQ,stock,2026-08-11T22:10:07.835043
 ALPX,Alpex Acquisition Corporation - Class A Ordinary Shares,NASDAQ,stock,2026-08-11T22:10:07.835043
 ALPXR,Alpex Acquisition Corporation - Rights,NASDAQ,stock,2026-08-11T22:10:07.835043
@@ -523,7 +530,9 @@ ALZN,"Alzamend Neuro, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.8350
 AM,Antero Midstream Corporation Common Stock,NYSE,stock,2026-08-11T22:10:07.835043
 AMA,Defiance Daily Target 2X Long AMAT ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
 AMAA,Corgi AMZN 2x Daily ETF,Cboe BZX,etf,2026-08-11T22:10:07.835043
+AMAC,AMR Resources Acquisition Corp - Class A Ordinary Shares,NASDAQ,stock,2026-09-14T16:13:35.006762
 AMACU,AMR Resources Acquisition Corp - Units,NASDAQ,stock,2026-08-11T22:10:07.835043
+AMACW,AMR Resources Acquisition Corp - Warrants,NASDAQ,stock,2026-09-14T16:13:35.006762
 AMAL,Amalgamated Financial Corp. - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
 AMAN,Amanat Acquisition Corp - Class A Ordinary Shares,NASDAQ,stock,2026-08-11T22:10:07.835043
 AMAT,"Applied Materials, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
@@ -821,8 +830,8 @@ ASB,Associated Banc-Corp Common Stock,NYSE,stock,2026-08-11T22:10:07.835043
 ASB$E,"Associated Banc-Corp Depositary Shares, each representing a 1/40th interest in a share of 5.875% Non-Cumulative Perpetual Preferred Stock, Series E",NYSE,stock,2026-08-11T22:10:07.835043
 ASB$F,"Associated Banc-Corp Depositary Shares, each representing a 1/40th interest in a share of Associated Banc-Corp 5.625% Non-Cumulative Perpetual Preferred Stock, Series F",NYSE,stock,2026-08-11T22:10:07.835043
 ASBA,Associated Banc-Corp 6.625% Fixed-Rate Reset Subordinated Notes due 2033,NYSE,stock,2026-08-11T22:10:07.835043
-ASBP,"Aspire Biopharma Holdings, Inc.  - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
-ASBPW,"Aspire Biopharma Holdings, Inc.  - Warrant",NASDAQ,stock,2026-08-11T22:10:07.835043
+ASBP,"Aspire-Lakewood Holdings, Inc. - Common Stock",NASDAQ,stock,2026-09-14T16:13:35.006762
+ASBPW,"Aspire-Lakewood Holdings, Inc. - Warrant",NASDAQ,stock,2026-09-14T16:13:35.006762
 ASC,Ardmore Shipping Corporation Common Stock,NYSE,stock,2026-08-11T22:10:07.835043
 ASCE,Allspring SMID Core ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 ASCI,abrdn International Small Cap Active ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
@@ -877,7 +886,6 @@ ASUP,T-REX 2X Long ASTS Daily Target ETF,Cboe BZX,etf,2026-08-11T22:10:07.835043
 ASUR,Asure Software Inc - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
 ASX,"ASE Technology Holding Co., Ltd. American Depositary Shares (each representing Two Common Shares) ",NYSE,stock,2026-08-11T22:10:07.835043
 ASYS,"Amtech Systems, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
-ATAI,AtaiBeckley Inc. - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
 ATAT,Atour Lifestyle Holdings Limited - American Depositary Shares,NASDAQ,stock,2026-08-11T22:10:07.835043
 ATC,GraniteShares Autocallable COIN ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
 ATCH,"AtlasClear Holdings, Inc. Common Stock",NYSE American,stock,2026-08-11T22:10:07.835043
@@ -927,6 +935,7 @@ ATRO,Astronics Corporation - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.83504
 ATS,ATS Corporation Common Shares,NYSE,stock,2026-08-11T22:10:07.835043
 ATTO,"Attovia Therapeutics, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 ATTR,Arin Tactical Tail Risk ETF,Cboe BZX,etf,2026-08-11T22:10:07.835043
+ATTT,Atlas Trinity Tech Limited - Ordinary Shares,NASDAQ,stock,2026-09-14T16:13:35.006762
 ATXG,Addentax Group Corp. - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
 ATYR,"aTyr Pharma, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 AU,AngloGold Ashanti PLC Ordinary Shares,NYSE,stock,2026-08-11T22:10:07.835043
@@ -957,6 +966,7 @@ AUSM,Allspring Ultra Short Municipal ETF,NYSE Arca,etf,2026-08-11T22:10:07.83504
 AUST,Austin Gold Corp. Common Shares,NYSE American,stock,2026-08-11T22:10:07.835043
 AUTL,Autolus Therapeutics plc - American Depositary Shares,NASDAQ,stock,2026-08-11T22:10:07.835043
 AUUD,Auddia Inc. - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
+AUXX,Gold X2 Mining Inc. Common Shares,NYSE American,stock,2026-09-14T16:13:35.006762
 AV,Corgi Aerospace & Commercial Aviation ETF,Cboe BZX,etf,2026-08-11T22:10:07.835043
 AVA,Avista Corporation Common Stock,NYSE,stock,2026-08-11T22:10:07.835043
 AVAH,Aveanna Healthcare Holdings Inc. - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
@@ -1702,7 +1712,6 @@ BRLS,Borealis Foods Inc. - Class A Common Shares,NASDAQ,stock,2026-08-11T22:10:0
 BRLSW,Borealis Foods Inc. - Warrant,NASDAQ,stock,2026-08-11T22:10:07.835043
 BRLT,"Brilliant Earth Group, Inc. - Class A Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 BRN,"Barnwell Industries, Inc. Common Stock",NYSE American,stock,2026-08-11T22:10:07.835043
-BRNS,Barinthus Biotherapeutics plc - American Depositary Shares,NASDAQ,stock,2026-08-11T22:10:07.835043
 BRNX,BrenX Ltd. - Ordinary Shares,NASDAQ,stock,2026-08-17T10:34:28.514600
 BRNY,Burney U.S. Factor Rotation ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
 BRO,"Brown & Brown, Inc. Common Stock",NYSE,stock,2026-08-11T22:10:07.835043
@@ -1716,7 +1725,9 @@ BRSM,MFS Blended Research Small-Mid Cap ETF,NYSE Arca,etf,2026-08-11T22:10:07.83
 BRSP,"BrightSpire Capital, Inc. Class A Common Stock",NYSE,stock,2026-08-11T22:10:07.835043
 BRSV,EA Bridgeway Select Small-Cap Value ETF,Cboe BZX,etf,2026-08-11T22:10:07.835043
 BRT,BRT Apartments Corp. (MD) Common Stock,NYSE,stock,2026-08-11T22:10:07.835043
+BRTM,B&R Technology Merger Corp. - Class A Ordinary Shares,NASDAQ,stock,2026-09-14T16:13:35.006762
 BRTMU,B&R Technology Merger Corp. - Units,NASDAQ,stock,2026-08-11T22:10:07.835043
+BRTMW,B&R Technology Merger Corp. - Warrants,NASDAQ,stock,2026-09-14T16:13:35.006762
 BRTR,iShares Total Return Active ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
 BRTX,"BioRestorative Therapies, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 BRUN,Boost Run Inc. - Class A Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
@@ -1789,7 +1800,6 @@ BSVO,EA Bridgeway Omni Small-Cap Value ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
 BSX,Boston Scientific Corporation Common Stock,NYSE,stock,2026-08-11T22:10:07.835043
 BSY,"Bentley Systems, Incorporated - Class B Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 BTA,Beacon Tactical Alternatives Risk ETF,NYSE Arca,etf,2026-08-31T17:27:03.738381
-BTAI,"BioXcel Therapeutics, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 BTAL,AGF U.S. Market Neutral Anti-Beta Fund,NYSE Arca,etf,2026-08-11T22:10:07.835043
 BTBD,"BT Brands, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 BTBDW,"BT Brands, Inc. - Warrant",NASDAQ,stock,2026-08-11T22:10:07.835043
@@ -1858,6 +1868,7 @@ BULLW,Webull Corporation - Warrants,NASDAQ,stock,2026-08-11T22:10:07.835043
 BULZ,MicroSectors FANG & Innovation 3x Leveraged ETN,NYSE Arca,etf,2026-08-11T22:10:07.835043
 BUR,Burford Capital Limited Ordinary Shares,NYSE,stock,2026-08-11T22:10:07.835043
 BURL,"Burlington Stores, Inc. Common Stock",NYSE,stock,2026-08-11T22:10:07.835043
+BURU,"Nuburu, Inc. Common Stock",NYSE American,stock,2026-09-14T16:13:35.006762
 BUSA,Brandes U.S. Value ETF,Cboe BZX,etf,2026-08-11T22:10:07.835043
 BUSE,First Busey Corporation - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
 BUSEP,"First Busey Corporation - Depositary Shares, Each Representing a 1/40th Interest in a Share of 8.25% Fixed-Rate Series B Non-Cumulative Perpetual Preferred Stock, $0.001 par value",NASDAQ,stock,2026-08-11T22:10:07.835043
@@ -1972,7 +1983,7 @@ CANF,"Can-Fite Biopharma Ltd American Depositary Shares, each representing two (
 CANG,Cango Inc. Class A Ordinary Shares,NYSE,stock,2026-08-11T22:10:07.835043
 CANQ,Calamos Nasdaq Equity & Income ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
 CAOS,Alpha Architect Tail Risk ETF,Cboe BZX,etf,2026-08-11T22:10:07.835043
-CAPA,Defiance AI Capacitors Leaders ETF,Cboe BZX,etf,2026-08-31T17:27:03.738381
+CAPA,Defiance AI Capacitors & MLCC ETF,Cboe BZX,etf,2026-09-14T16:13:35.006762
 CAPE,DoubleLine Shiller CAPE U.S. Equities ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 CAPL,CrossAmerica Partners LP Common Units representing limited partner interests,NYSE,stock,2026-08-11T22:10:07.835043
 CAPN,Cayson Acquisition Corp - Ordinary Shares,NASDAQ,stock,2026-08-11T22:10:07.835043
@@ -2087,6 +2098,7 @@ CCK,"Crown Holdings, Inc.",NYSE,stock,2026-08-11T22:10:07.835043
 CCL,Carnival Corporation Ltd. Common Shares,NYSE,stock,2026-08-11T22:10:07.835043
 CCLD,"CareCloud, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 CCM,Concord Medical Services Holdings Limited American Depositary Shares (Each represents thirty (30) Class A ordinary shares),NYSE,stock,2026-08-11T22:10:07.835043
+CCML,Roundhill MLCC & Electronic Components ETF,NASDAQ,etf,2026-09-14T16:13:35.006762
 CCNE,CNB Financial Corporation - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
 CCNEP,"CNB Financial Corporation - Depositary shares, each representing a 1/40th ownership interest in a share of 7.125% Series A Fixed- Rate Non-Cumulative Perpetual Preferred Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 CCNR,ALPS/CoreCommodity Natural Resources ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
@@ -2234,6 +2246,7 @@ CGVV,Capital Group U.S. Large Value ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 CGW,Invesco S&P Global Water Index ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 CGXU,Capital Group International Focus Equity ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 CHA,"Chagee Holdings Limited - American Depositary Shares, each representing 1 Class A ordinary share",NASDAQ,stock,2026-08-11T22:10:07.835043
+CHAD,DeFi Development Corp. - Variable Rate Series C Perpetual Preferred Stock,NASDAQ,stock,2026-09-14T16:13:35.006762
 CHAI,"Core AI Holdings, Inc. - Common Shares",NASDAQ,stock,2026-08-11T22:10:07.835043
 CHAR,Charlton Aria Acquisition Corporation - Class A Ordinary Shares,NASDAQ,stock,2026-08-11T22:10:07.835043
 CHARR,Charlton Aria Acquisition Corporation - Rights,NASDAQ,stock,2026-08-11T22:10:07.835043
@@ -2632,6 +2645,7 @@ CRACU,Crown Reserve Acquisition Corp. I - Unit,NASDAQ,stock,2026-08-11T22:10:07.
 CRACW,Crown Reserve Acquisition Corp. I - Warrant,NASDAQ,stock,2026-08-11T22:10:07.835043
 CRAI,"CRA International,Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 CRAK,VanEck Oil Refiners ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
+CRAM,Defiance China Memory ETF,NASDAQ,etf,2026-09-14T16:13:35.006762
 CRAN,Crane Harbor Acquisition Corp. II - Class A Ordinary Shares,NASDAQ,stock,2026-08-11T22:10:07.835043
 CRANR,Crane Harbor Acquisition Corp. II - Rights,NASDAQ,stock,2026-08-11T22:10:07.835043
 CRANU,Crane Harbor Acquisition Corp. II - Units,NASDAQ,stock,2026-08-11T22:10:07.835043
@@ -2865,7 +2879,6 @@ CXSE,WisdomTree China ex-State-Owned Enterprises Fund,NASDAQ,etf,2026-08-11T22:1
 CXT,"Crane NXT, Co. Common Stock",NYSE,stock,2026-08-11T22:10:07.835043
 CXW,"CoreCivic, Inc. Common Stock",NYSE,stock,2026-08-11T22:10:07.835043
 CYAB,"Cyabra, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
-CYCN,"Cyclerion Therapeutics, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 CYCU,"Cycurion, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 CYCUW,"Cycurion, Inc. - Warrants",NASDAQ,stock,2026-08-11T22:10:07.835043
 CYD,China Yuchai International Limited Common Stock,NYSE,stock,2026-08-11T22:10:07.835043
@@ -3121,6 +3134,7 @@ DHY,UBS Asset Management High Yield Credit Fund Common Stock,NYSE American,stock
 DIA,State Street SPDR Dow Jones Industrial Average ETF Trust,NYSE Arca,etf,2026-08-11T22:10:07.835043
 DIAL,Columbia Diversified Fixed Income Allocation ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 DIBS,"1stdibs.com, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
+DICE,Tema Trading & Prediction Markets ETF,Cboe BZX,etf,2026-09-14T16:13:35.006762
 DIEM,Franklin Emerging Market Core Dividend Tilt Index ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 DIG,ProShares Ultra Energy,NYSE Arca,etf,2026-08-11T22:10:07.835043
 DIHP,Dimensional International High Profitability ETF,Cboe BZX,etf,2026-08-11T22:10:07.835043
@@ -3210,6 +3224,7 @@ DMRA,"Damora Therapeutics, Inc. - Ordinary Shares",NASDAQ,stock,2026-08-11T22:10
 DMRC,Digimarc Corporation - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
 DMX,DoubleLine Multi-Sector Income ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 DMXF,iShares ESG Advanced MSCI EAFE ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
+DMXU,Xtrackers Bloomberg Developed Markets ex US Equity ETF,NYSE Arca,etf,2026-09-14T16:13:35.006762
 DNA,"Ginkgo Bioworks Holdings, Inc. Class A Common Stock",NYSE,stock,2026-08-11T22:10:07.835043
 DNL,WisdomTree Global ex-U.S. Quality Growth Fund,NYSE Arca,etf,2026-08-11T22:10:07.835043
 DNLI,Denali Therapeutics Inc. - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
@@ -3427,7 +3442,6 @@ EALT,Innovator U.S. Equity 5 to 15 Buffer ETF - Quarterly,Cboe BZX,etf,2026-08-1
 EAPR,Innovator Emerging Markets Power Buffer ETF April,NYSE Arca,etf,2026-08-11T22:10:07.835043
 EARN,Ellington Credit Company Common Shares of Beneficial Interest,NYSE,stock,2026-08-11T22:10:07.835043
 EART,Global X Rare Earth & Critical Materials ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
-EASG,Xtrackers MSCI EAFE Selection Equity ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 EASY,Liberty One Defensive Dividend Growth ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
 EAT,"Brinker International, Inc. Common Stock",NYSE,stock,2026-08-11T22:10:07.835043
 EBAY,eBay Inc. - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
@@ -3700,6 +3714,7 @@ ENVB,"Enveric Biosciences, Inc.  - Common Stock",NASDAQ,stock,2026-08-11T22:10:0
 ENVX,Enovix Corporation - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
 ENZL,iShares MSCI New Zealand ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
 EO,Corgi EOSE 2x Daily ETF,Cboe BZX,etf,2026-08-11T22:10:07.835043
+EOCN,Eocene Ltd. - Ordinary Shares,NASDAQ,stock,2026-09-14T16:13:35.006762
 EOCT,Innovator Emerging Markets Power Buffer ETF - October,NYSE Arca,etf,2026-08-11T22:10:07.835043
 EOD,Allspring Global Dividend Opportunity Fund Common Shares of Beneficial Interest,NYSE,stock,2026-08-11T22:10:07.835043
 EOG,"EOG Resources, Inc. Common Stock",NYSE,stock,2026-08-11T22:10:07.835043
@@ -4623,7 +4638,7 @@ FUSB,"First US Bancshares, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07
 FUSD,Federated Hermes Ultrashort Bond ETF,Cboe BZX,etf,2026-08-11T22:10:07.835043
 FUSE,Fusemachines Inc. - Common stock,NASDAQ,stock,2026-08-11T22:10:07.835043
 FUSEW,Fusemachines Inc. - Warrants,NASDAQ,stock,2026-08-11T22:10:07.835043
-FUSI,American Century Multisector Floating Income ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
+FUSI,American Century Ultrashort Income ETF,NYSE Arca,etf,2026-09-14T16:13:35.006762
 FUTG,Leverage Shares 2x Long FUTU Daily ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
 FUTU,Futu Holdings Limited - American Depositary Shares,NASDAQ,stock,2026-08-11T22:10:07.835043
 FUTY,Fidelity MSCI Utilities Index ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
@@ -4794,6 +4809,7 @@ GEMD,Goldman Sachs Access Emerging Markets USD Bond ETF,Cboe BZX,etf,2026-08-11T
 GEME,Pacific North of South EM Equity Active ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
 GEMG,Leverage Shares 2X Long GEMI Daily ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
 GEMI,"Gemini Space Station, Inc. - Class A Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
+GEMQ,Goldman Sachs Data Enhanced Emerging Markets Equity ETF,NASDAQ,etf,2026-09-14T16:13:35.006762
 GEN,Gen Digital Inc. - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
 GENB,"Generate Biomedicines, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 GENC,"Gencor Industries, Inc. Common Stock",NYSE American,stock,2026-08-11T22:10:07.835043
@@ -4826,7 +4842,6 @@ GFI,Gold Fields Limited American Depositary Shares,NYSE,stock,2026-08-11T22:10:0
 GFL,"GFL Environmental Inc. Subordinate voting shares, no par value",NYSE,stock,2026-08-11T22:10:07.835043
 GFLW,VictoryShares Free Cash Flow Growth ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
 GFR,Greenfire Resources Ltd. Common Shares,NYSE,stock,2026-08-11T22:10:07.835043
-GFR.R,"Greenfire Resources Ltd. Rights (expiring September 15, 2026) Rights",NYSE,stock,2026-08-31T17:27:03.738381
 GFS,GlobalFoundries Inc. - Ordinary Share,NASDAQ,stock,2026-08-11T22:10:07.835043
 GFSG,Leverage Shares 2X Long GFS Daily ETF,Cboe BZX,etf,2026-08-11T22:10:07.835043
 GFUZ,General Fusion Group Ltd. - Common Shares,NASDAQ,stock,2026-08-11T22:10:07.835043
@@ -4883,7 +4898,6 @@ GIND,Goldman Sachs India Equity ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
 GINN,Goldman Sachs Innovate Equity ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 GINX,SGI Enhanced Global Income ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
 GIPR,Generation Income Properties Inc. - Common stock,NASDAQ,stock,2026-08-11T22:10:07.835043
-GIPRW,Generation Income Properties Inc. - Warrant,NASDAQ,stock,2026-08-11T22:10:07.835043
 GIS,"General Mills, Inc. Common Stock",NYSE,stock,2026-08-11T22:10:07.835043
 GISC,Guggenheim Securitized Income ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 GITS,"Global Interactive Technologies, Inc. Common Stock - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
@@ -4932,7 +4946,6 @@ GLIBK,Liberty Capital Corporation - Series C GCI Group Common Stock,NASDAQ,stock
 GLIN,VanEck India Growth Leaders ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 GLIX,Lazard Listed Infrastructure ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 GLL,ProShares UltraShort Gold,NYSE Arca,etf,2026-08-11T22:10:07.835043
-GLMD,Galmed Pharmaceuticals Ltd. - Ordinary Shares,NASDAQ,stock,2026-08-11T22:10:07.835043
 GLND,Greenland Energy Company - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
 GLNDW,Greenland Energy Company - Warrant,NASDAQ,stock,2026-08-11T22:10:07.835043
 GLNG,Golar LNG Limited - Common Shares,NASDAQ,stock,2026-08-11T22:10:07.835043
@@ -5433,6 +5446,7 @@ HLMN,Hillman Solutions Corp. - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835
 HLN,Haleon plc American Depositary Shares (Each representing two Ordinary Shares),NYSE,stock,2026-08-11T22:10:07.835043
 HLNE,Hamilton Lane Incorporated - Class A Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
 HLP,Hongli Group Inc. - Class A Ordinary Shares,NASDAQ,stock,2026-08-11T22:10:07.835043
+HLSQ,Tessera Defense and Homeland Security Inc. Common Stock,NYSE American,stock,2026-09-14T16:13:35.006762
 HLT,Hilton Worldwide Holdings Inc. Common Stock ,NYSE,stock,2026-08-11T22:10:07.835043
 HLTH,Tema Healthcare AI ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
 HLXC,Helix Acquisition Corp. III - Class A Ordinary Shares,NASDAQ,stock,2026-08-11T22:10:07.835043
@@ -5628,7 +5642,7 @@ HYPD,"Hyperion DeFi, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.83504
 HYPG,Grayscale Hyperliquid Staking ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
 HYPR,"Hyperfine, Inc.  - Class A Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 HYS,PIMCO 0-5 Year High Yield Corporat Bond Index Exchange-Traded Fund,NYSE Arca,etf,2026-08-11T22:10:07.835043
-HYSA,BondBloxx USD High Yield Bond Sector Rotation ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
+HYSA,BondBloxx High Yield Income ETF,NYSE Arca,etf,2026-09-14T16:13:35.006762
 HYSD,Columbia Short Duration High Yield ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 HYT,"Blackrock Corporate High Yield Fund, Inc. Common Stock",NYSE,stock,2026-08-11T22:10:07.835043
 HYTI,FT Vest High Yield & Target Income ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
@@ -6518,6 +6532,7 @@ KARD,"Kardigan, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 KARO,Karooooo Ltd. - Ordinary shares,NASDAQ,stock,2026-08-11T22:10:07.835043
 KARS,KraneShares Electric Vehicles and Future Mobility Index ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 KAT,Scharf ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
+KATT,T-REX 2X Long PURR Daily Target ETF,Cboe BZX,etf,2026-09-14T16:13:35.006762
 KAUG,Innovator US Small Cap Power Buffer ETF - August,Cboe BZX,etf,2026-08-11T22:10:07.835043
 KAZR,Skyline Builders Group Holding Limited - Class A Ordinary Shares,NASDAQ,stock,2026-08-11T22:10:07.835043
 KB,KB Financial Group Inc,NYSE,stock,2026-08-11T22:10:07.835043
@@ -6596,7 +6611,7 @@ KGEI,Kolibri Global Energy Inc. - Common stock,NASDAQ,stock,2026-08-11T22:10:07.
 KGLD,Kurv Gold Enhanced Income ETF,Cboe BZX,etf,2026-08-11T22:10:07.835043
 KGRN,KraneShares MSCI China Clean Technology Index ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 KGS,"Kodiak Gas Services, Inc. Common Stock",NYSE,stock,2026-08-11T22:10:07.835043
-KHC,The Kraft Heinz Company - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
+KHC,The Kraft Heinz Company Common Stock,NYSE,stock,2026-09-14T16:13:35.006762
 KHPI,Kensington Hedged Premium Income ETF,Cboe BZX,etf,2026-08-11T22:10:07.835043
 KHYB,KraneShares Asia Pacific High Income USD Bond ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 KIDS,OrthoPediatrics Corp. - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
@@ -6716,6 +6731,7 @@ KROP,Global X AgTech & Food Innovation ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
 KROS,"Keros Therapeutics, Inc. - common stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 KRP,Kimbell Royalty Partners Common Units Representing Limited Partner Interests,NYSE,stock,2026-08-11T22:10:07.835043
 KRRO,"Korro Bio, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
+KRSA,"Korsana Biosciences, Inc. - Common Stock",NASDAQ,stock,2026-09-14T16:13:35.006762
 KRSP,Rice Acquisition Corporation 3 Class A Ordinary Shares,NYSE,stock,2026-08-11T22:10:07.835043
 KRSP.U,"Rice Acquisition Corporation 3 Units, each consisting of one Class A ordinary share, and one-sixth of one redeemable warrant",NYSE,stock,2026-08-11T22:10:07.835043
 KRSP.W,"Rice Acquisition Corporation 3 Redeemable warrants, each whole warrant exercisable for one Class A ordinary share at an exercise price of $11.50",NYSE,stock,2026-08-11T22:10:07.835043
@@ -6758,8 +6774,6 @@ KVYO,"Klaviyo, Inc. Series A Common Stock",NYSE,stock,2026-08-11T22:10:07.835043
 KWEB,KraneShares CSI China Internet ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 KWH,GMO Power Infrastructure ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 KWIN,KraneShares Wahed Alternative Income Index ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
-KWM,"K Wave Media, Ltd. - Ordinary Shares",NASDAQ,stock,2026-08-11T22:10:07.835043
-KWMWW,"K Wave Media, Ltd. - Warrant",NASDAQ,stock,2026-08-11T22:10:07.835043
 KWR,Quaker Houghton Common Stock,NYSE,stock,2026-08-11T22:10:07.835043
 KWT,iShares MSCI Kuwait ETF,Cboe BZX,etf,2026-08-11T22:10:07.835043
 KWY,Kingsway Corporation Common Stock,NYSE,stock,2026-08-11T22:10:07.835043
@@ -7043,7 +7057,6 @@ LPG,Dorian LPG Ltd. Common Stock,NYSE,stock,2026-08-11T22:10:07.835043
 LPL,"LG Display Co, Ltd AMERICAN DEPOSITORY SHARES",NYSE,stock,2026-08-11T22:10:07.835043
 LPLA,LPL Financial Holdings Inc. - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
 LPRE,Long Pond Real Estate Select ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
-LPSN,"LivePerson, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 LPTH,"LightPath Technologies, Inc. - Class A Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 LPX,Louisiana-Pacific Corporation Common Stock,NYSE,stock,2026-08-11T22:10:07.835043
 LQ,Simplify Tax Aware Alternatives ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
@@ -7387,10 +7400,12 @@ MFM,Aberdeen Municipal Income Fund Common Shares of Beneficial Interest,NYSE,sto
 MFMO,Motley Fool Momentum Factor ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
 MFP,"Midera Food Processing, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 MFSB,MFS Active Core Plus Bond ETF,NYSE,etf,2026-08-11T22:10:07.835043
+MFSD,MFS Active Short Duration Income ETF,NYSE Arca,etf,2026-09-14T16:13:35.006762
 MFSG,MFS Active Growth ETF,NYSE,etf,2026-08-11T22:10:07.835043
 MFSI,MFS Active International ETF,NYSE,etf,2026-08-11T22:10:07.835043
 MFSM,MFS Active Intermediate Muni Bond ETF,NYSE,etf,2026-08-11T22:10:07.835043
 MFSV,MFS Active Value ETF,NYSE,etf,2026-08-11T22:10:07.835043
+MFSX,MFS Active Short Muni Bond ETF,NYSE Arca,etf,2026-09-14T16:13:35.006762
 MFUL,Mindful Conservative ETF,Cboe BZX,etf,2026-08-11T22:10:07.835043
 MFUS,PIMCO RAFI Dynamic Multi-Factor U.S. Equity ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 MFUT,Cambria Chesapeake Pure Trend ETF,Cboe BZX,etf,2026-08-11T22:10:07.835043
@@ -7496,6 +7511,7 @@ MLAA,Mountain Lake Acquisition Corp. II - Class A Ordinary Shares,NASDAQ,stock,2
 MLAAU,Mountain Lake Acquisition Corp. II - Units,NASDAQ,stock,2026-08-11T22:10:07.835043
 MLAAW,Mountain Lake Acquisition Corp. II - Warrants,NASDAQ,stock,2026-08-11T22:10:07.835043
 MLAB,"Mesa Laboratories, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
+MLCC,Global X MLCC & Electronic Components ETF,Cboe BZX,etf,2026-09-14T16:13:35.006762
 MLCI,Mount Logan Capital Inc. - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
 MLCIL,Mount Logan Capital Inc. - 8.00% Notes Due 2031,NASDAQ,stock,2026-08-11T22:10:07.835043
 MLCO,Melco Resorts & Entertainment Limited - American Depositary Shares ,NASDAQ,stock,2026-08-11T22:10:07.835043
@@ -7785,7 +7801,6 @@ MUNY,Vanguard New York Tax-Exempt Bond ETF,Cboe BZX,etf,2026-08-11T22:10:07.8350
 MUR,Murphy Oil Corporation Common Stock,NYSE,stock,2026-08-11T22:10:07.835043
 MUSA,Murphy USA Inc. Common Stock,NYSE,stock,2026-08-11T22:10:07.835043
 MUSE,TCW Multisector Credit Income ETF,NYSE,etf,2026-08-11T22:10:07.835043
-MUSI,American Century Multisector Income ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 MUSQ,MUSQ Global Music Industry Index ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 MUST,Columbia Multi-Sector Municipal Income ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 MUU,Direxion Daily MU Bull 2X ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
@@ -8016,6 +8031,7 @@ NEXRW,Nexera Technologies Ltd - Warrant,NASDAQ,stock,2026-08-11T22:10:07.835043
 NEXT,NextDecade Corporation - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
 NFE,New Fortress Energy Inc. - Class A Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
 NFEB,Innovator Growth-100 Power Buffer ETF - February,Cboe BZX,etf,2026-08-11T22:10:07.835043
+NFEGP,New Fortress Energy Inc. - Series A Mandatorily Convertible Preferred Stock,NASDAQ,stock,2026-09-14T16:13:35.006762
 NFG,National Fuel Gas Company Common Stock,NYSE,stock,2026-08-11T22:10:07.835043
 NFGC,New Found Gold Corp Common Shares,NYSE American,stock,2026-08-11T22:10:07.835043
 NFJ,"Virtus Dividend, Interest & Premium Strategy Fund Common Shares of Beneficial Interest",NYSE,stock,2026-08-11T22:10:07.835043
@@ -8108,7 +8124,7 @@ NMAY,Innovator Growth-100 Power Buffer ETF - May,Cboe BZX,etf,2026-08-11T22:10:0
 NMB,Simplify National Muni Bond ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 NMBL,NovaTide Flexible Allocation ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 NMCO,Nuveen Municipal Credit Opportunities Fund Common Shares,NYSE,stock,2026-08-11T22:10:07.835043
-NMCO.V,"Nuveen Municipal Credit Opportunities Fund Rights (expiring October 7, 2026) Rights when issued",NYSE,stock,2026-09-07T15:36:07.754837
+NMCO.R,"Nuveen Municipal Credit Opportunities Fund Rights (expiring October 7, 2026) Rights",NYSE,stock,2026-09-14T16:13:35.006762
 NMFC,New Mountain Finance Corporation - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
 NMFCZ,New Mountain Finance Corporation - 8.250% Notes due 2028,NASDAQ,stock,2026-08-11T22:10:07.835043
 NMG,Nouveau Monde Graphite Inc. Common Shares,NYSE,stock,2026-08-11T22:10:07.835043
@@ -8181,6 +8197,7 @@ NPV,Nuveen Virginia Quality Municipal Income Fund Common Stock,NYSE,stock,2026-0
 NPWR,NET Power Inc. Class A Common Stock,NYSE,stock,2026-08-11T22:10:07.835043
 NPWR.W,"NET Power Inc. Redeemable warrants, each whole warrant exercisable for one share of Class A Common Stock at an exercise price of $11.50",NYSE,stock,2026-08-11T22:10:07.835043
 NQLT,Neuberger Quality Select ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
+NRAM,Yorkville America Next Generation Memory Index ETF,NYSE Arca,etf,2026-09-14T16:13:35.006762
 NRC,NRC Health - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
 NRDS,"NerdWallet, Inc. - Class A Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 NRDY,Nerdy Inc. Class A Common Stock,NYSE,stock,2026-08-11T22:10:07.835043
@@ -8351,6 +8368,8 @@ NWS,News Corporation - Class B Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835
 NWSA,News Corporation - Class A Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
 NWTG,"Newton Golf Company, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 NX,Quanex Building Products Corporation Common Stock,NYSE,stock,2026-08-11T22:10:07.835043
+NXAT,Nexus Advanced Technologies Inc. - Ordinary Shares,NASDAQ,stock,2026-09-14T16:13:35.006762
+NXATW,Nexus Advanced Technologies Inc. - Warrant,NASDAQ,stock,2026-09-14T16:13:35.006762
 NXB,NextBoat Inc. Common Stcok,NYSE American,stock,2026-08-11T22:10:07.835043
 NXDR,"Nextdoor Holdings, Inc. Class A Common Stock",NYSE,stock,2026-08-11T22:10:07.835043
 NXDT,NexPoint Diversified Real Estate Trust Common Stock,NYSE,stock,2026-08-11T22:10:07.835043
@@ -8434,7 +8453,10 @@ OCFC,OceanFirst Financial Corp. - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.
 OCG,Oriental Culture Holding LTD - Ordinary Shares,NASDAQ,stock,2026-08-11T22:10:07.835043
 OCGN,"Ocugen, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 OCIO,ClearShares OCIO ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
+OCLT,OceanLight Acquisition Corporation - Ordinary Shares,NASDAQ,stock,2026-09-14T16:13:35.006762
+OCLTR,OceanLight Acquisition Corporation - Rights,NASDAQ,stock,2026-09-14T16:13:35.006762
 OCLTU,OceanLight Acquisition Corporation - Units,NASDAQ,stock,2026-08-11T22:10:07.835043
+OCLTW,OceanLight Acquisition Corporation - Warrants,NASDAQ,stock,2026-09-14T16:13:35.006762
 OCNL,T-REX 2X Long DOCN Daily Target ETF,Cboe BZX,etf,2026-08-11T22:10:07.835043
 OCS,Oculis Holding AG - Ordinary shares,NASDAQ,stock,2026-08-11T22:10:07.835043
 OCSAW,Oculis Holding AG - Warrants,NASDAQ,stock,2026-08-11T22:10:07.835043
@@ -8991,7 +9013,6 @@ PHAT,"Phathom Pharmaceuticals, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:1
 PHDG,Invesco S&P 500 Downside Hedged ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 PHEQ,Parametric Hedged Equity ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 PHG,Koninklijke Philips N.V. NY Registry Shares,NYSE,stock,2026-08-11T22:10:07.835043
-PHGE,BiomX Inc. COmmon Stock,NYSE American,stock,2026-08-11T22:10:07.835043
 PHI,PLDT Inc. Sponsored ADR,NYSE,stock,2026-08-11T22:10:07.835043
 PHIN,PHINIA Inc. Common Stock,NYSE,stock,2026-08-11T22:10:07.835043
 PHIO,Phio Pharmaceuticals Corp. - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
@@ -9105,7 +9126,7 @@ PLXS,Plexus Corp. - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
 PLYX,"Polaryx Therapeutics, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 PLYY,GraniteShares YieldBOOST PLTR ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
 PM,Philip Morris International Inc Common Stock,NYSE,stock,2026-08-11T22:10:07.835043
-PMA,Ming Shing Group Holdings Limited - Ordinary Shares,NASDAQ,stock,2026-08-11T22:10:07.835043
+PMA,PMA Graphene Technology Group Inc. - Class A Ordinary Shares,NASDAQ,stock,2026-09-14T16:13:35.006762
 PMAP,PGIM S&P 500 Max Buffer ETF - April,Cboe BZX,etf,2026-08-11T22:10:07.835043
 PMAR,Innovator U.S. Equity Power Buffer ETF - March,Cboe BZX,etf,2026-08-11T22:10:07.835043
 PMAU,PGIM S&P 500 Max Buffer ETF - August,Cboe BZX,etf,2026-08-11T22:10:07.835043
@@ -9218,7 +9239,7 @@ PQXX,PGIM S&P 500 Quarterly Buffer 20 ETF,Cboe BZX,etf,2026-08-11T22:10:07.83504
 PR,Permian Resources Corporation Class A Common Stock,NYSE,stock,2026-08-11T22:10:07.835043
 PRAA,"PRA Group, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 PRAB,State Street IG Public & Private ABS ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
-PRAE,PlanRock Alternative Growth ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
+PRAE,PlanRock Equity Plus Alternatives ETF,NYSE Arca,etf,2026-09-14T16:13:35.006762
 PRAM,Defiance Memory & Photonics ETF,Cboe BZX,etf,2026-08-31T17:27:03.738381
 PRAX,"Praxis Precision Medicines, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 PRAY,FIS Christian Stock Fund,NYSE Arca,etf,2026-08-11T22:10:07.835043
@@ -9685,7 +9706,6 @@ RARE,Ultragenyx Pharmaceutical Inc. - Common Stock,NASDAQ,stock,2026-08-11T22:10
 RAUS,RACWI US ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
 RAVE,"Rave Restaurant Group, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 RAVI,Northern Trust Ultra-Short Fixed Income ETF,NYSE Arca,etf,2026-08-17T10:34:28.514600
-RAY,Raytech Holding Limited - Ordinary Shares,NASDAQ,stock,2026-08-11T22:10:07.835043
 RAYA,Erayak Power Solution Group Inc. - Class A Ordinary Shares,NASDAQ,stock,2026-08-11T22:10:07.835043
 RB,ProShares Russell 2000 Dynamic Buffer ETF,Cboe BZX,etf,2026-08-11T22:10:07.835043
 RBA,"RB Global, Inc. Common Stock",NYSE,stock,2026-08-11T22:10:07.835043
@@ -9822,8 +9842,6 @@ RFAMR,RF Acquisition Corp III - Rights,NASDAQ,stock,2026-08-11T22:10:07.835043
 RFAMU,RF Acquisition Corp III - Units,NASDAQ,stock,2026-08-11T22:10:07.835043
 RFCI,ALPS Dynamic Core Income ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 RFDA,ALPS Dynamic US Dividend Advantage ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
-RFDI,First Trust RiverFront Dynamic Developed International ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
-RFEM,First Trust RiverFront Dynamic Emerging Markets ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
 RFFC,ALPS Active Equity Opportunity ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 RFG,Invesco S&P MidCap 400 Pure Growth ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 RFI,"Cohen & Steers Total Return Realty Fund, Inc. Common Stock",NYSE,stock,2026-08-11T22:10:07.835043
@@ -9941,6 +9959,7 @@ RMD,ResMed Inc. Common Stock,NYSE,stock,2026-08-11T22:10:07.835043
 RMHY,Global X Adaptive Risk Managed Yield ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 RMI,"RiverNorth Opportunistic Municipal Income Fund, Inc. Common Stock",NYSE,stock,2026-08-11T22:10:07.835043
 RMIX,"Suncrete, Inc. - Class A Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
+RML,Resolution Minerals Ltd - American Depositary Shares,NASDAQ,stock,2026-09-14T16:13:35.006762
 RMM,"RiverNorth Managed Duration Municipal Income Fund, Inc. Common Stock",NYSE,stock,2026-08-11T22:10:07.835043
 RMME,Rareview Government Money Market ETF,Cboe BZX,etf,2026-08-11T22:10:07.835043
 RMMZ,"RiverNorth Managed Duration Municipal Income Fund II, Inc. Common Stock",NYSE,stock,2026-08-11T22:10:07.835043
@@ -11146,6 +11165,7 @@ SWKHL,SWK Holdings Corporation - 9.00% Senior Notes due 2027,NASDAQ,stock,2026-0
 SWKS,"Skyworks Solutions, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 SWMR,"Swarmer, Inc - common stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 SWP,SWP Growth & Income ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
+SWRD,Stewards Inc - Common Stock,NASDAQ,stock,2026-09-14T16:13:35.006762
 SWVL,Swvl Holdings Corp - Ordinary Shares,NASDAQ,stock,2026-08-11T22:10:07.835043
 SWVLW,Swvl Holdings Corp - Warrant,NASDAQ,stock,2026-08-11T22:10:07.835043
 SWX,"Southwest Gas Holdings, Inc. Common Stock (DE)",NYSE,stock,2026-08-11T22:10:07.835043
@@ -11352,7 +11372,7 @@ TESL,Simplify Volt TSLA Revolution ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 TEST,YieldMax TSLA Performance & Distribution Target 25 ETF,Cboe BZX,etf,2026-08-11T22:10:07.835043
 TETH,21Shares Ethereum ETF,Cboe BZX,etf,2026-08-11T22:10:07.835043
 TEUP,T-REX 2X Long TE Daily Target ETF,Cboe BZX,etf,2026-08-11T22:10:07.835043
-TEVA,Teva Pharmaceutical Industries Limited American Depositary Shares,NYSE,stock,2026-08-11T22:10:07.835043
+TEVA,Teva Pharmaceutical Industries Limited Ordinary Shares,NYSE,stock,2026-09-14T16:13:35.006762
 TEX,Terex Corporation Common Stock,NYSE,stock,2026-08-11T22:10:07.835043
 TEXN,iShares Texas Equity ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
 TEXU,Direxion Daily Energy Top 5 Bull 2X ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
@@ -11454,6 +11474,7 @@ TIPZ,PIMCO Broad U.S. TIPS Index Exchange-Traded Fund,NYSE Arca,etf,2026-08-11T2
 TISC,Thrivent International Small Cap ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
 TISI,"Team, Inc. Common Stock",NYSE,stock,2026-08-11T22:10:07.835043
 TITN,Titan Machinery Inc. - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
+TIZE,TCW Securitized Income ETF,NYSE Arca,etf,2026-09-14T16:13:35.006762
 TJAN,Innovator Equity Defined Protection ETF - 2 Yr to January 2027,Cboe BZX,etf,2026-08-11T22:10:07.835043
 TJGC,TJGC Group Limited - Class A Ordinary Shares,NASDAQ,stock,2026-08-17T10:34:28.514600
 TJUL,Innovator Equity Defined Protection ETF - 2 Yr to July 2027,Cboe BZX,etf,2026-08-11T22:10:07.835043
@@ -11503,7 +11524,6 @@ TMB,Thornburg Multi Sector Bond ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
 TMC,TMC the metals company Inc. - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
 TMCI,"Treace Medical Concepts, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 TMCR,The Metals Royalty Company Inc. - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
-TMCWW,TMC the metals company Inc. - Warrant,NASDAQ,stock,2026-08-11T22:10:07.835043
 TMDE,TMD Energy Limited Ordinary Shares,NYSE American,stock,2026-08-11T22:10:07.835043
 TMDV,ProShares Russell US Dividend Growers ETF,Cboe BZX,etf,2026-08-11T22:10:07.835043
 TMDX,"TransMedics Group, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
@@ -11692,6 +11712,7 @@ TRV,"The Travelers Companies, Inc. Common Stock",NYSE,stock,2026-08-11T22:10:07.
 TRVG,trivago N.V. - American Depositary Shares,NASDAQ,stock,2026-08-11T22:10:07.835043
 TRVI,"Trevi Therapeutics, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 TRX,TRX Gold Corporation Common Stock,NYSE American,stock,2026-08-11T22:10:07.835043
+TRXS,Canary Staked TRX ETF,Cboe BZX,etf,2026-09-14T16:13:35.006762
 TS,Tenaris S.A. American Depositary Shares,NYSE,stock,2026-08-11T22:10:07.835043
 TSAT,Telesat Corporation - Class A Common Shares and Class B Variable Voting Shares,NASDAQ,stock,2026-08-11T22:10:07.835043
 TSBK,"Timberland Bancorp, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
@@ -12195,11 +12216,13 @@ VECO,Veeco Instruments Inc. - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.8350
 VEEA,Veea Inc. - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
 VEEAW,Veea Inc. - Warrant,NASDAQ,stock,2026-08-11T22:10:07.835043
 VEEE,Twin Vee PowerCats Co. - Common Stock,NASDAQ,stock,2026-08-11T22:10:07.835043
+VEEM,VanEck MSCI EM Analyst Sentiment ETF,NASDAQ,etf,2026-09-14T16:13:35.006762
 VEEV,Veeva Systems Inc. Class A Common Stock,NYSE,stock,2026-08-11T22:10:07.835043
 VEFA,VanEck MSCI EAFE Analyst Sentiment ETF,NASDAQ,etf,2026-08-11T22:10:07.835043
 VEGA,AdvisorShares STAR Global Buy-Write ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 VEGI,iShares MSCI Agriculture Producers ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 VEGN,US Vegan Climate ETF,Cboe BZX,etf,2026-08-11T22:10:07.835043
+VEGX,International Vegan Climate ETF,Cboe BZX,etf,2026-09-14T16:13:35.006762
 VEL,"Velocity Financial, Inc. Common Stock",NYSE,stock,2026-08-11T22:10:07.835043
 VELL,Defiance Daily Target 2X Long VELO ETF,Cboe BZX,etf,2026-08-11T22:10:07.835043
 VELO,"Velo3D, Inc. - Common stock",NASDAQ,stock,2026-08-11T22:10:07.835043
@@ -12825,7 +12848,9 @@ XLB,State Street Materials Select Sector SPDR ETF,NYSE Arca,etf,2026-08-11T22:10
 XLBI,State Street Materials Select Sector SPDR Premium Income ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 XLBX,Corgi U.S. Materials 2x Daily ETF,Cboe BZX,etf,2026-08-11T22:10:07.835043
 XLC,State Street Communication Services Select Sector SPDR ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
+XLCD,MicroSectors -3x Short Communication Services (XLC) ETNs,Cboe BZX,etf,2026-09-14T16:13:35.006762
 XLCI,State Street Communication Services Select Sector SPDR Premium Income ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
+XLCU,MicroSectors 3x Long Communication Services (XLC) ETNs,Cboe BZX,etf,2026-09-14T16:13:35.006762
 XLE,State Street Energy Select Sector SPDR ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 XLEI,State Street Energy Select Sector SPDR Premium Income ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 XLEX,Corgi U.S. Energy 2x Daily ETF,Cboe BZX,etf,2026-08-11T22:10:07.835043
@@ -12841,6 +12866,8 @@ XLKI,State Street Technology Select Sector SPDR Premium Income ETF,NYSE Arca,etf
 XLKX,Corgi U.S. Technology 2x Daily ETF,Cboe BZX,etf,2026-08-11T22:10:07.835043
 XLO,"Xilio Therapeutics, Inc. - Common Stock",NASDAQ,stock,2026-08-11T22:10:07.835043
 XLP,State Street Consumer Staples Select Sector SPDR ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
+XLPD,MicroSectors -3x Short Consumer Staples (XLP) ETNs,Cboe BZX,etf,2026-09-14T16:13:35.006762
+XLPU,MicroSectors 3x Long Consumer Staples (XLP) ETNs,Cboe BZX,etf,2026-09-14T16:13:35.006762
 XLPX,Corgi U.S. Consumer Staples 2x Daily ETF,Cboe BZX,etf,2026-08-11T22:10:07.835043
 XLRE,State Street Real Estate Select Sector SPDR ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
 XLRI,State Street Real Estate Select Sector SPDR Premium Income ETF,NYSE Arca,etf,2026-08-11T22:10:07.835043
