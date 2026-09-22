@@ -289,3 +289,6 @@ TNMG,2026-09-18,entry,score=5.95 rsi=80.3
 AEMD,2026-09-19,sold,cover: banked 0.0% gain in 0d (up 374.1% off the low)
 PAAI,2026-09-19,sold,cover: banked 0.0% gain in 0d (up 271.1% off the low)
 TNMG,2026-09-19,short_signal,down 30.5% from peak 3.87
+VEEA,2026-09-22,short_signal,down 27.0% from peak 6.10
+SDGR,2026-09-22,faded,"no new high in 3d, never triggered"
+TNMG,2026-09-22,sold,cover: banked 0.0% gain in 0d (up 43.9% off the low)
