@@ -386,3 +386,5 @@ INTR,2026-10-15,entry,score=4.81 rsi=82.8
 JBDI,2026-10-15,entry,score=26.78 rsi=88.2
 PTLO,2026-10-15,entry,score=5.06 rsi=85.0
 TCRT,2026-10-15,entry,score=23.20 rsi=82.6
+PFAI,2026-10-15,sold,cover: banked 38.3% gain in 4d (up 80.1% off the low)
+TCRT,2026-10-15,short_signal,down 31.7% from peak 3.03
